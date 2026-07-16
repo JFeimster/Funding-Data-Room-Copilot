@@ -14,7 +14,7 @@ api/actions/public.js
 actions/no-auth/openapi/no-auth-actions.openapi.yaml
 ```
 
-Replace `https://YOUR-VERCEL-DOMAIN.vercel.app` with the production Vercel domain before adding the schema to GPT Builder.
+Production OpenAPI server: `https://funding-data-room-copilot.vercel.app`.
 
 ## Test Console
 

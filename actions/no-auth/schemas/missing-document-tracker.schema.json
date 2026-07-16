@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/missing-document-tracker.schema.json",
+  "$id": "https://funding-data-room-copilot.vercel.app/actions/no-auth/schemas/missing-document-tracker.schema.json",
   "title": "Funding Data Room Missing Document Tracker",
   "description": "Structured operational tracker for received, missing, outdated, incomplete, conflicting, or review-needed funding-file items.",
   "type": "object",

@@ -428,7 +428,7 @@ Requirements:
 - title: `Funding Data Room Copilot — No-Auth Actions`
 - version: `1.0.0`
 - one server placeholder using:
-  - `https://YOUR-VERCEL-DOMAIN.vercel.app`
+  - `https://funding-data-room-copilot.vercel.app`
 - path:
   - `/api/actions/public`
 - method:

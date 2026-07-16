@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/schemas/public-action-request.schema.json",
+  "$id": "https://funding-data-room-copilot.vercel.app/schemas/public-action-request.schema.json",
   "title": "Funding Data Room Copilot Public Action Request",
   "description": "Shared request contract for the stateless no-auth public action dispatcher.",
   "type": "object",

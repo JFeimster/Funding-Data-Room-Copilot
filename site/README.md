@@ -30,7 +30,7 @@ actions/no-auth/schemas/
 actions/no-auth/openapi/
 ```
 
-## Configure the GPT CTA
+## Funding Data Room Copilot CTA
 
 Edit the configuration object near the top of:
 
@@ -41,19 +41,19 @@ site/script.js
 Replace:
 
 ```text
-https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT
+https://chatgpt.com/g/g-6a580c6ec5648191a2d27f4528015f3f-funding-data-room-copilot
 ```
 
 with the Funding Data Room Copilot Custom GPT URL.
 
 The previously supplied Agent Launch Site Builder URL is the site-building GPT, not the product CTA, so it is not used as the Funding Data Room Copilot launch destination.
 
-## Configure the Production Domain
+## Production Domain
 
 Replace every occurrence of:
 
 ```text
-https://YOUR-VERCEL-DOMAIN.vercel.app
+https://funding-data-room-copilot.vercel.app
 ```
 
 after the controlled Vercel production deployment.
@@ -131,7 +131,7 @@ Capture after deployment:
 - [x] No additional serverless function
 - [x] No fake testimonials or ratings
 - [x] Planned downloads clearly labeled
-- [ ] Replace the Custom GPT URL placeholder
-- [ ] Replace the Vercel domain placeholder
+- [x] Configure the Custom GPT URL
+- [x] Configure the Vercel production domain
 - [ ] Verify the repaired dispatcher before live tool testing
 - [ ] Capture production screenshots

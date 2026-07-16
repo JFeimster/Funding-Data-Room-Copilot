@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/schemas/public-action-response.schema.json",
+  "$id": "https://funding-data-room-copilot.vercel.app/schemas/public-action-response.schema.json",
   "title": "Funding Data Room Copilot Public Action Response",
   "description": "Success or error response from the no-auth public action dispatcher.",
   "oneOf": [
