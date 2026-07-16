@@ -3,7 +3,7 @@
   "pages": [
     {
       "title": "Home",
-      "path": "/site/index.html",
+      "path": "/",
       "description": "Funding Data Room Copilot launch page.",
       "type": "marketing",
       "navigation_group": "primary",
@@ -11,7 +11,7 @@
     },
     {
       "title": "Getting Started",
-      "path": "/site/pages/getting-started.html",
+      "path": "/pages/getting-started.html",
       "description": "Safe intake and first workflow.",
       "type": "guide",
       "navigation_group": "primary",
@@ -19,7 +19,7 @@
     },
     {
       "title": "Actions",
-      "path": "/site/pages/actions.html",
+      "path": "/pages/actions.html",
       "description": "Catalog of nine no-auth actions.",
       "type": "reference",
       "navigation_group": "primary",
@@ -27,7 +27,7 @@
     },
     {
       "title": "Knowledge",
-      "path": "/site/pages/knowledge.html",
+      "path": "/pages/knowledge.html",
       "description": "Knowledge pack structure and status.",
       "type": "reference",
       "navigation_group": "resources",
@@ -35,7 +35,7 @@
     },
     {
       "title": "Templates",
-      "path": "/site/pages/templates.html",
+      "path": "/pages/templates.html",
       "description": "Operational templates and formats.",
       "type": "resource",
       "navigation_group": "primary",
@@ -43,7 +43,7 @@
     },
     {
       "title": "Privacy",
-      "path": "/site/pages/privacy.html",
+      "path": "/pages/privacy.html",
       "description": "Metadata-first privacy rules.",
       "type": "policy",
       "navigation_group": "primary",
@@ -51,7 +51,7 @@
     },
     {
       "title": "Testing",
-      "path": "/site/pages/testing.html",
+      "path": "/pages/testing.html",
       "description": "Safe action testing guide.",
       "type": "guide",
       "navigation_group": "primary",
@@ -59,7 +59,7 @@
     },
     {
       "title": "Downloads",
-      "path": "/site/pages/downloads.html",
+      "path": "/pages/downloads.html",
       "description": "Approved downloads and planned releases.",
       "type": "resource",
       "navigation_group": "resources",
@@ -67,7 +67,7 @@
     },
     {
       "title": "About",
-      "path": "/site/pages/about.html",
+      "path": "/pages/about.html",
       "description": "Product scope, audience, and boundaries.",
       "type": "company",
       "navigation_group": "resources",
@@ -75,7 +75,7 @@
     },
     {
       "title": "No-Auth Test Console",
-      "path": "/site/tools/no-auth-test.html",
+      "path": "/tools/no-auth-test.html",
       "description": "Generic action test console.",
       "type": "tool",
       "navigation_group": "tools",
@@ -83,7 +83,7 @@
     },
     {
       "title": "Package Builder",
-      "path": "/site/tools/package-builder.html",
+      "path": "/tools/package-builder.html",
       "description": "Complete package builder.",
       "type": "tool",
       "navigation_group": "tools",
@@ -91,7 +91,7 @@
     },
     {
       "title": "Folder Structure Builder",
-      "path": "/site/tools/folder-structure-builder.html",
+      "path": "/tools/folder-structure-builder.html",
       "description": "Business-aware folder generator.",
       "type": "tool",
       "navigation_group": "tools",
@@ -99,7 +99,7 @@
     },
     {
       "title": "Missing-Document Tracker",
-      "path": "/site/tools/missing-document-tracker.html",
+      "path": "/tools/missing-document-tracker.html",
       "description": "Operational tracker generator.",
       "type": "tool",
       "navigation_group": "tools",
@@ -107,7 +107,7 @@
     },
     {
       "title": "Readiness QA",
-      "path": "/site/tools/readiness-qa.html",
+      "path": "/tools/readiness-qa.html",
       "description": "Readiness classification tool.",
       "type": "tool",
       "navigation_group": "tools",

@@ -167,10 +167,7 @@
       "broken": []
     }
   },
-  "placeholders": [
-    "https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT",
-    "https://YOUR-VERCEL-DOMAIN.vercel.app"
-  ],
+  "placeholders": [],
   "files": [
     "README-site.md",
     "site/styles.css",
@@ -200,5 +197,11 @@
     "site/components/header.html",
     "site/components/footer.html",
     "site/components/privacy-warning.html"
-  ]
+  ],
+  "configuration": {
+    "production_url": "https://funding-data-room-copilot.vercel.app/",
+    "gpt_url": "https://chatgpt.com/g/g-6a580c6ec5648191a2d27f4528015f3f-funding-data-room-copilot",
+    "vercel_root_directory": "site",
+    "git_auto_deployments": "disabled for all branches; enable main explicitly when ready"
+  }
 }

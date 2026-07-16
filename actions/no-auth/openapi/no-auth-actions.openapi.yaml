@@ -4,8 +4,8 @@ info:
   version: 1.0.0
   description: Stateless tools for organizing funding files, identifying readiness gaps, and preparing human-reviewed data room outputs.
 servers:
-  - url: https://YOUR-VERCEL-DOMAIN.vercel.app
-    description: Replace with the deployed Vercel production domain.
+  - url: https://funding-data-room-copilot.vercel.app
+    description: Funding Data Room Copilot production server.
 paths:
   /api/actions/public:
     post:

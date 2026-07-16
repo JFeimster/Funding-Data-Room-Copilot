@@ -1,7 +1,7 @@
 "use strict";
 
 const APP_CONFIG = Object.freeze({
-  gptUrl: "https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT",
+  gptUrl: "https://chatgpt.com/g/g-6a580c6ec5648191a2d27f4528015f3f-funding-data-room-copilot",
   actionEndpoint: "/api/actions/public",
   brokerJoinUrl: "https://tally.so/r/mOe658",
   requestLimitBytes: 128 * 1024

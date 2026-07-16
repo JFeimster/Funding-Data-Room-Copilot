@@ -195,14 +195,14 @@ The root `package.json` includes:
 Deploy the repository root to Vercel. The endpoint becomes:
 
 ```text
-https://YOUR-VERCEL-DOMAIN.vercel.app/api/actions/public
+https://funding-data-room-copilot.vercel.app/api/actions/public
 ```
 
 ## GPT Builder Setup
 
 1. Deploy the project.
 2. Open `actions/no-auth/openapi/no-auth-actions.openapi.yaml`.
-3. Replace `https://YOUR-VERCEL-DOMAIN.vercel.app` with the production domain.
+3. Confirm the OpenAPI server is `https://funding-data-room-copilot.vercel.app`.
 4. Add the OpenAPI document to the GPT Action configuration.
 5. Select no authentication.
 6. Test `generate_folder_structure`.

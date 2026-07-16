@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/deal-snapshot.schema.json",
+  "$id": "https://funding-data-room-copilot.vercel.app/actions/no-auth/schemas/deal-snapshot.schema.json",
   "title": "Funding Data Room Deal Snapshot",
   "description": "Factual one-page funding-file summary prepared for human review without approval or underwriting conclusions.",
   "type": "object",

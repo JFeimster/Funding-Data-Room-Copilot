@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/data-room-package.schema.json",
+  "$id": "https://funding-data-room-copilot.vercel.app/actions/no-auth/schemas/data-room-package.schema.json",
   "title": "Funding Data Room Copilot Composite Package",
   "description": "Composite no-auth package containing folder structure, checklist, naming rules, tracker, snapshot, privacy review, context notes, and readiness QA.",
   "type": "object",
