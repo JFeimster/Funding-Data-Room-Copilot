@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "endpoint": "/api/actions/public",
+  "valid_examples": [
+    {
+      "name": "Build complete data room package",
+      "request": {
+        "action": "build_data_room_package",
+        "payload": {
+          "business_name": "Northstar Goods Inc",
+          "business_type": "ecommerce",
+          "user_role": "business_owner",
+          "funding_purpose": "Inventory and payout timing",
+          "requested_amount": 75000,
+          "minimum_useful_amount": 50000,
+          "documents_available": [
+            "June business bank statement",
+            "Shopify sales report",
+            "Stripe payout report"
+          ],
+          "documents_missing": [
+            {
+              "document": "Current debt schedule",
+              "category": "Debt and Obligations",
+              "status": "Requested"
+            }
+          ],
+          "current_file_names": [
+            "June Statement.pdf",
+            "shopify report final.csv"
+          ],
+          "revenue_context": [
+            {
+              "event_type": "platform_payout_delay",
+              "period": "June 2026",
+              "amount": 18000,
+              "explanation": "A portion of platform sales was paid after the statement period.",
+              "supporting_documents": [
+                "Stripe payout report"
+              ]
+            }
+          ]
+        },
+        "request_id": "example-package-001"
+      }
+    },
+    {
+      "name": "Generate folder structure",
+      "request": {
+        "action": "generate_folder_structure",
+        "payload": {
+          "business_name": "Ridgeway Electric LLC",
+          "business_type": "contractor",
+          "user_role": "business_owner",
+          "funding_purpose": "Equipment"
+        },
+        "request_id": "example-folders-001"
+      }
+    },
+    {
+      "name": "Generate document checklist",
+      "request": {
+        "action": "generate_document_checklist",
+        "payload": {
+          "business_name": "Harbor Table LLC",
+          "business_type": "restaurant",
+          "user_role": "processor",
+          "documents_available": [
+            "Formation document",
+            "March bank statement"
+          ],
+          "documents_missing": [
+            "Current P&L",
+            "Debt schedule"
+          ]
+        },
+        "request_id": "example-checklist-001"
+      }
+    },
+    {
+      "name": "Generate file naming rules",
+      "request": {
+        "action": "generate_file_naming_rules",
+        "payload": {
+          "business_name": "Acme Roofing LLC",
+          "current_file_names": [
+            "download (7).pdf",
+            "June Chase Statement.pdf",
+            "2025 tax return signed.pdf"
+          ]
+        },
+        "request_id": "example-names-001"
+      }
+    },
+    {
+      "name": "Create missing document tracker",
+      "request": {
+        "action": "create_missing_document_tracker",
+        "payload": {
+          "business_name": "Signal House Agency",
+          "user_role": "broker",
+          "documents_available": [
+            "Formation document"
+          ],
+          "documents_missing": [
+            {
+              "document": "May bank statement",
+              "category": "Bank Statements",
+              "status": "Incomplete",
+              "notes": "Two pages are missing."
+            },
+            {
+              "document": "Current AR aging",
+              "category": "Financial Statements",
+              "status": "Outdated"
+            }
+          ]
+        },
+        "request_id": "example-tracker-001"
+      }
+    },
+    {
+      "name": "Generate deal snapshot",
+      "request": {
+        "action": "generate_deal_snapshot",
+        "payload": {
+          "business_name": "Ridgeway Electric LLC",
+          "legal_entity": "Virginia LLC",
+          "industry": "Electrical contractor",
+          "location": "Richmond, Virginia",
+          "time_in_business": "4 years",
+          "owner_name": "Morgan Reed",
+          "requested_amount": 80000,
+          "minimum_useful_amount": 55000,
+          "funding_purpose": "Equipment, supplier deposits, and payroll timing",
+          "documents_available": [
+            "YTD P&L",
+            "Equipment quote"
+          ],
+          "documents_missing": [
+            "May bank statement"
+          ]
+        },
+        "request_id": "example-snapshot-001"
+      }
+    },
+    {
+      "name": "Generate privacy checklist",
+      "request": {
+        "action": "generate_privacy_checklist",
+        "payload": {
+          "business_name": "Willow Creek Clinic",
+          "privacy_constraints": [
+            "The uploaded receivables report includes patient names.",
+            "The folder is currently shared with anyone who has the link."
+          ]
+        },
+        "request_id": "example-privacy-001"
+      }
+    },
+    {
+      "name": "Rewrite context notes",
+      "request": {
+        "action": "rewrite_context_notes",
+        "payload": {
+          "business_name": "Northstar Goods Inc",
+          "revenue_context": [
+            {
+              "event_type": "inventory_purchase",
+              "period": "June 2026",
+              "amount": 32000,
+              "explanation": "Supplier deposit for seasonal inventory.",
+              "source": "User-reported information",
+              "supporting_documents": [
+                "Purchase order",
+                "Supplier invoice"
+              ]
+            }
+          ]
+        },
+        "request_id": "example-context-001"
+      }
+    },
+    {
+      "name": "Run readiness QA gate",
+      "request": {
+        "action": "run_readiness_qa_gate",
+        "payload": {
+          "business_name": "Ridgeway Electric LLC",
+          "documents_available": [
+            "February bank statement",
+            "March bank statement"
+          ],
+          "documents_missing": [
+            "April bank statement"
+          ],
+          "readiness_gaps": [
+            {
+              "gap": "April bank statement is missing.",
+              "priority": "Blocker",
+              "why_it_matters": "The designated review period is incomplete.",
+              "next_action": "Obtain the complete April statement.",
+              "suggested_owner": "Business owner",
+              "human_review_required": true
+            }
+          ]
+        },
+        "request_id": "example-qa-001"
+      }
+    }
+  ],
+  "invalid_examples": [
+    {
+      "name": "Unknown action",
+      "request": {
+        "action": "predict_approval",
+        "payload": {},
+        "request_id": "invalid-action-001"
+      },
+      "expected_error_code": "UNKNOWN_ACTION"
+    },
+    {
+      "name": "Missing payload",
+      "request": {
+        "action": "generate_folder_structure",
+        "request_id": "invalid-payload-001"
+      },
+      "expected_error_code": "INVALID_REQUEST"
+    },
+    {
+      "name": "Credential field supplied",
+      "request": {
+        "action": "generate_privacy_checklist",
+        "payload": {
+          "business_name": "Example LLC",
+          "bank_password": "do-not-send-this"
+        },
+        "request_id": "invalid-privacy-001"
+      },
+      "expected_error_code": "PRIVACY_RISK"
+    }
+  ]
+}

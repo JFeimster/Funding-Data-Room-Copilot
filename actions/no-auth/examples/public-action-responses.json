@@ -1,0 +1,204 @@
+{
+  "version": "1.0.0",
+  "successful_examples": [
+    {
+      "name": "Folder structure success",
+      "status": 200,
+      "response": {
+        "ok": true,
+        "action": "generate_folder_structure",
+        "data": {
+          "package_name": "Funding Data Room - Ridgeway_Electric_LLC",
+          "business_name": "Ridgeway Electric LLC",
+          "normalized_business_type": "contractor",
+          "folder_tree": "Funding Data Room - Ridgeway_Electric_LLC/\n\u251c\u2500\u2500 00_Read_Me_and_Status/\n\u2514\u2500\u2500 12_Final_Human_Review_Packet/",
+          "human_review_required": true
+        },
+        "warnings": [],
+        "human_review_required": true,
+        "request_id": "example-folders-001",
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "name": "Composite package success",
+      "status": 200,
+      "response": {
+        "ok": true,
+        "action": "build_data_room_package",
+        "data": {
+          "package_summary": {
+            "package_name": "Funding Data Room - Northstar_Goods_Inc",
+            "business_name": "Northstar Goods Inc",
+            "business_type": "ecommerce",
+            "user_role": "business_owner",
+            "requested_amount": 75000,
+            "minimum_useful_amount": 50000,
+            "funding_purpose": "Inventory and payout timing",
+            "qa_classification": "Provisional \u2014 Confirmation Needed",
+            "blocker_count": 0,
+            "fix_before_submission_count": 1,
+            "improve_if_time_allows_count": 0
+          },
+          "human_review_required": true,
+          "final_reminder": "Final review still needs a human. Clean organization helps the file, but it does not guarantee approval."
+        },
+        "warnings": [],
+        "human_review_required": true,
+        "request_id": "example-package-001",
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    }
+  ],
+  "blocker_example": {
+    "status": 200,
+    "response": {
+      "ok": true,
+      "action": "run_readiness_qa_gate",
+      "data": {
+        "classification": "Hold \u2014 Blocker Present",
+        "blockers": [
+          {
+            "gap": "April bank statement is missing.",
+            "priority": "Blocker",
+            "why_it_matters": "The designated review period is incomplete.",
+            "next_action": "Obtain the complete April statement.",
+            "suggested_owner": "Business owner",
+            "human_review_required": true
+          }
+        ],
+        "human_review_required": true
+      },
+      "warnings": [],
+      "human_review_required": true,
+      "request_id": "example-qa-001",
+      "meta": {
+        "version": "1.0.0"
+      }
+    }
+  },
+  "provisional_example": {
+    "status": 200,
+    "response": {
+      "ok": true,
+      "action": "generate_deal_snapshot",
+      "data": {
+        "qa_classification": "Provisional \u2014 Confirmation Needed",
+        "provisional_assumptions": [
+          {
+            "assumption": "The requested amount is not yet stated.",
+            "why_it_was_necessary": "The snapshot can be organized before the amount is confirmed.",
+            "must_confirm": "Confirm the active requested amount.",
+            "affected_output": "Funding request and use-of-funds section."
+          }
+        ],
+        "human_review_required": true
+      },
+      "warnings": [],
+      "human_review_required": true,
+      "request_id": "example-provisional-001",
+      "meta": {
+        "version": "1.0.0"
+      }
+    }
+  },
+  "error_examples": [
+    {
+      "name": "Unknown action",
+      "status": 400,
+      "response": {
+        "ok": false,
+        "action": "predict_approval",
+        "error": {
+          "code": "UNKNOWN_ACTION",
+          "message": "The requested public action is not supported.",
+          "details": [
+            {
+              "path": "action",
+              "issue": "Unsupported public action: predict_approval"
+            }
+          ]
+        },
+        "human_review_required": false,
+        "request_id": "invalid-action-001",
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "name": "Invalid payload",
+      "status": 400,
+      "response": {
+        "ok": false,
+        "action": "rewrite_context_notes",
+        "error": {
+          "code": "INVALID_PAYLOAD",
+          "message": "The action payload failed validation.",
+          "details": [
+            {
+              "path": "payload.revenue_context",
+              "issue": "At least one context event is required to rewrite context notes."
+            }
+          ]
+        },
+        "human_review_required": false,
+        "request_id": "invalid-context-001",
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "name": "Privacy risk",
+      "status": 400,
+      "response": {
+        "ok": false,
+        "action": "generate_privacy_checklist",
+        "error": {
+          "code": "PRIVACY_RISK",
+          "message": "The request appears to contain a prohibited credential, secret, or sensitive field.",
+          "details": [
+            {
+              "path": "payload.bank_password",
+              "issue": "Potential credential, secret, or prohibited sensitive field."
+            }
+          ]
+        },
+        "human_review_required": true,
+        "request_id": "invalid-privacy-001",
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    },
+    {
+      "name": "Payload too large",
+      "status": 413,
+      "response": {
+        "ok": false,
+        "action": null,
+        "error": {
+          "code": "PAYLOAD_TOO_LARGE",
+          "message": "The JSON request exceeds the 131072-byte public action limit.",
+          "details": [
+            {
+              "maximum_bytes": 131072,
+              "received_bytes": 140000,
+              "guidance": "Send document metadata and summaries only. Do not send binary files or base64 document content."
+            }
+          ]
+        },
+        "human_review_required": false,
+        "request_id": null,
+        "meta": {
+          "version": "1.0.0"
+        }
+      }
+    }
+  ]
+}

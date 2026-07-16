@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funding Data Room Copilot — No-Auth Action Console</title>
+  <meta
+    name="description"
+    content="Static test console for the Funding Data Room Copilot no-auth action dispatcher."
+  >
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #080b10;
+      --panel: rgba(18, 24, 33, 0.9);
+      --panel-strong: #111822;
+      --line: #293443;
+      --line-bright: #3d4d61;
+      --text: #f4f7fb;
+      --muted: #9ba9b9;
+      --accent: #45f0bd;
+      --accent-2: #76a8ff;
+      --warning: #ffca5c;
+      --danger: #ff6f7d;
+      --success: #61e6a7;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+      --radius: 18px;
+      --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(69, 240, 189, 0.13), transparent 30rem),
+        radial-gradient(circle at 100% 10%, rgba(118, 168, 255, 0.12), transparent 34rem),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .shell {
+      width: min(1440px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(2rem, 5vw, 4.5rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .badge {
+      flex: 0 0 auto;
+      border: 1px solid rgba(69, 240, 189, 0.35);
+      border-radius: 999px;
+      padding: 9px 13px;
+      background: rgba(69, 240, 189, 0.08);
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .privacy {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      margin-bottom: 22px;
+      padding: 16px 18px;
+      border: 1px solid rgba(255, 202, 92, 0.34);
+      border-radius: 14px;
+      background: rgba(255, 202, 92, 0.07);
+      color: #f8dfaa;
+      line-height: 1.55;
+    }
+
+    .privacy strong {
+      color: var(--warning);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .panel {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(22, 30, 42, 0.95), rgba(13, 18, 26, 0.95));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .panel-header h2 {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    .panel-body {
+      padding: 20px;
+    }
+
+    .fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      outline: none;
+      background: #0b1017;
+      color: var(--text);
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    input,
+    select {
+      min-height: 44px;
+      padding: 0 12px;
+    }
+
+    textarea {
+      min-height: 490px;
+      resize: vertical;
+      padding: 15px;
+      font-family: var(--mono);
+      font-size: 0.86rem;
+      line-height: 1.55;
+      tab-size: 2;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--accent-2);
+      box-shadow: 0 0 0 3px rgba(118, 168, 255, 0.12);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .button {
+      min-height: 42px;
+      border: 1px solid var(--line-bright);
+      border-radius: 11px;
+      padding: 0 15px;
+      background: #16202d;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    .button:hover {
+      border-color: var(--accent-2);
+    }
+
+    .button.primary {
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent), #8df4d5);
+      color: #07100d;
+    }
+
+    .button.danger {
+      color: #ffc3ca;
+    }
+
+    .button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      min-height: 32px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .status.success {
+      border-color: rgba(97, 230, 167, 0.4);
+      background: rgba(97, 230, 167, 0.08);
+      color: var(--success);
+    }
+
+    .status.error {
+      border-color: rgba(255, 111, 125, 0.42);
+      background: rgba(255, 111, 125, 0.08);
+      color: var(--danger);
+    }
+
+    .status.pending {
+      border-color: rgba(118, 168, 255, 0.42);
+      background: rgba(118, 168, 255, 0.08);
+      color: var(--accent-2);
+    }
+
+    pre {
+      min-height: 594px;
+      max-height: 720px;
+      margin: 0;
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px;
+      background: #080d13;
+      color: #dbe7f4;
+      font-family: var(--mono);
+      font-size: 0.84rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .hint {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    code {
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    @media (max-width: 960px) {
+      .topbar {
+        display: block;
+      }
+
+      .badge {
+        display: inline-flex;
+        margin-top: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      textarea {
+        min-height: 390px;
+      }
+
+      pre {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .shell {
+        width: min(100% - 20px, 1440px);
+        padding-top: 20px;
+      }
+
+      .fields {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-body {
+        padding: 14px;
+      }
+
+      .panel-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .button {
+        flex: 1 1 calc(50% - 10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Funding Data Room Copilot · Operator Console</p>
+        <h1>One endpoint. Nine no-auth actions.</h1>
+        <p class="lede">
+          Test the consolidated Vercel dispatcher without creating nine separate
+          functions. This console sends metadata and summaries only.
+        </p>
+      </div>
+      <span class="badge">1 SERVERLESS FUNCTION</span>
+    </header>
+
+    <aside class="privacy" role="note" aria-label="Privacy warning">
+      <span aria-hidden="true">⚠</span>
+      <div>
+        <strong>Do not paste private financial documents or credentials.</strong>
+        Use test data and document metadata only. Exclude passwords, API keys,
+        access tokens, full Social Security numbers, full bank account numbers,
+        unredacted IDs, binary files, and base64 documents.
+      </div>
+    </aside>
+
+    <section class="grid">
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Request Builder</h2>
+          <span class="status" id="byteStatus">0 / 131,072 bytes</span>
+        </div>
+
+        <div class="panel-body">
+          <div class="fields">
+            <label>
+              Endpoint URL
+              <input
+                id="endpoint"
+                type="url"
+                value="/api/actions/public"
+                spellcheck="false"
+              >
+            </label>
+
+            <label>
+              Request ID
+              <input
+                id="requestId"
+                type="text"
+                value="browser-test-001"
+                maxlength="200"
+                spellcheck="false"
+              >
+            </label>
+          </div>
+
+          <label>
+            Action
+            <select id="action">
+              <option value="build_data_room_package">Build Data Room Package</option>
+              <option value="generate_folder_structure">Generate Folder Structure</option>
+              <option value="generate_document_checklist">Generate Document Checklist</option>
+              <option value="generate_file_naming_rules">Generate File Naming Rules</option>
+              <option value="create_missing_document_tracker">Create Missing Document Tracker</option>
+              <option value="generate_deal_snapshot">Generate Deal Snapshot</option>
+              <option value="generate_privacy_checklist">Generate Privacy Checklist</option>
+              <option value="rewrite_context_notes">Rewrite Context Notes</option>
+              <option value="run_readiness_qa_gate">Run Readiness QA Gate</option>
+            </select>
+          </label>
+
+          <label style="margin-top: 14px;">
+            JSON Payload
+            <textarea
+              id="payload"
+              spellcheck="false"
+              aria-describedby="payloadHint"
+            ></textarea>
+          </label>
+
+          <p class="hint" id="payloadHint">
+            The console wraps this object in
+            <code>{ "action", "payload", "request_id" }</code>.
+          </p>
+
+          <div class="actions">
+            <button class="button primary" id="sendButton" type="button">
+              Send Request
+            </button>
+            <button class="button" id="exampleButton" type="button">
+              Load Example
+            </button>
+            <button class="button" id="formatButton" type="button">
+              Format JSON
+            </button>
+            <button class="button danger" id="clearButton" type="button">
+              Clear
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-header">
+          <h2>Response</h2>
+          <div class="status-row">
+            <span class="status" id="responseStatus">Not sent</span>
+            <button class="button" id="copyButton" type="button" disabled>
+              Copy Response
+            </button>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <pre id="responseOutput" aria-live="polite">{
+  "message": "Load an example and send a request."
+}</pre>
+          <p class="hint">
+            A successful organizational result still requires human review and
+            does not predict eligibility or approval.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    "use strict";
+
+    const MAX_BYTES = 128 * 1024;
+
+    const examples = {
+      build_data_room_package: {
+        business_name: "Northstar Goods Inc",
+        business_type: "ecommerce",
+        user_role: "business_owner",
+        funding_purpose: "Inventory and payout timing",
+        requested_amount: 75000,
+        minimum_useful_amount: 50000,
+        documents_available: [
+          "June business bank statement",
+          "Shopify sales report",
+          "Stripe payout report"
+        ],
+        documents_missing: [
+          {
+            document: "Current debt schedule",
+            category: "Debt and Obligations",
+            status: "Requested"
+          }
+        ],
+        current_file_names: [
+          "June Statement.pdf",
+          "shopify report final.csv"
+        ],
+        revenue_context: [
+          {
+            event_type: "platform_payout_delay",
+            period: "June 2026",
+            amount: 18000,
+            explanation: "A portion of platform sales was paid after the statement period.",
+            supporting_documents: ["Stripe payout report"]
+          }
+        ]
+      },
+      generate_folder_structure: {
+        business_name: "Ridgeway Electric LLC",
+        business_type: "contractor",
+        user_role: "business_owner",
+        funding_purpose: "Equipment"
+      },
+      generate_document_checklist: {
+        business_name: "Harbor Table LLC",
+        business_type: "restaurant",
+        user_role: "processor",
+        documents_available: [
+          "Formation document",
+          "March bank statement"
+        ],
+        documents_missing: [
+          "Current P&L",
+          "Debt schedule"
+        ]
+      },
+      generate_file_naming_rules: {
+        business_name: "Acme Roofing LLC",
+        current_file_names: [
+          "download (7).pdf",
+          "June Chase Statement.pdf",
+          "2025 tax return signed.pdf"
+        ]
+      },
+      create_missing_document_tracker: {
+        business_name: "Signal House Agency",
+        user_role: "broker",
+        documents_available: ["Formation document"],
+        documents_missing: [
+          {
+            document: "May bank statement",
+            category: "Bank Statements",
+            status: "Incomplete",
+            notes: "Two pages are missing."
+          },
+          {
+            document: "Current AR aging",
+            category: "Financial Statements",
+            status: "Outdated"
+          }
+        ]
+      },
+      generate_deal_snapshot: {
+        business_name: "Ridgeway Electric LLC",
+        legal_entity: "Virginia LLC",
+        business_type: "contractor",
+        requested_amount: 80000,
+        minimum_useful_amount: 55000,
+        funding_purpose: "Equipment, supplier deposits, and payroll timing",
+        documents_available: [
+          "YTD P&L",
+          "Equipment quote"
+        ],
+        documents_missing: ["May bank statement"]
+      },
+      generate_privacy_checklist: {
+        business_name: "Willow Creek Clinic",
+        privacy_constraints: [
+          "The uploaded receivables report includes patient names.",
+          "The folder is currently shared with anyone who has the link."
+        ]
+      },
+      rewrite_context_notes: {
+        business_name: "Northstar Goods Inc",
+        revenue_context: [
+          {
+            event_type: "inventory_purchase",
+            period: "June 2026",
+            amount: 32000,
+            explanation: "Supplier deposit for seasonal inventory.",
+            source: "User-reported information",
+            supporting_documents: [
+              "Purchase order",
+              "Supplier invoice"
+            ]
+          }
+        ]
+      },
+      run_readiness_qa_gate: {
+        business_name: "Ridgeway Electric LLC",
+        documents_available: [
+          "February bank statement",
+          "March bank statement"
+        ],
+        documents_missing: ["April bank statement"],
+        readiness_gaps: [
+          {
+            gap: "April bank statement is missing.",
+            priority: "Blocker",
+            why_it_matters: "The designated review period is incomplete.",
+            next_action: "Obtain the complete April statement.",
+            suggested_owner: "Business owner",
+            human_review_required: true
+          }
+        ]
+      }
+    };
+
+    const endpoint = document.querySelector("#endpoint");
+    const requestId = document.querySelector("#requestId");
+    const action = document.querySelector("#action");
+    const payload = document.querySelector("#payload");
+    const byteStatus = document.querySelector("#byteStatus");
+    const responseStatus = document.querySelector("#responseStatus");
+    const responseOutput = document.querySelector("#responseOutput");
+    const sendButton = document.querySelector("#sendButton");
+    const exampleButton = document.querySelector("#exampleButton");
+    const formatButton = document.querySelector("#formatButton");
+    const clearButton = document.querySelector("#clearButton");
+    const copyButton = document.querySelector("#copyButton");
+
+    let lastResponseText = "";
+
+    function loadExample() {
+      payload.value = JSON.stringify(examples[action.value], null, 2);
+      updateByteCount();
+      setResponseStatus("Example loaded", "");
+    }
+
+    function setResponseStatus(text, state) {
+      responseStatus.textContent = text;
+      responseStatus.className = `status${state ? ` ${state}` : ""}`;
+    }
+
+    function updateByteCount() {
+      const request = {
+        action: action.value,
+        payload: safeParsePayload(false),
+        request_id: requestId.value.trim() || null
+      };
+      const serialized = JSON.stringify(request);
+      const bytes = new TextEncoder().encode(serialized).length;
+      byteStatus.textContent = `${bytes.toLocaleString()} / ${MAX_BYTES.toLocaleString()} bytes`;
+      byteStatus.className = `status${bytes > MAX_BYTES ? " error" : ""}`;
+      sendButton.disabled = bytes > MAX_BYTES;
+    }
+
+    function safeParsePayload(showError = true) {
+      try {
+        const parsed = JSON.parse(payload.value || "{}");
+        if (!parsed || Array.isArray(parsed) || typeof parsed !== "object") {
+          throw new Error("Payload must be a JSON object.");
+        }
+        return parsed;
+      } catch (error) {
+        if (showError) {
+          setResponseStatus("Invalid JSON", "error");
+          responseOutput.textContent = JSON.stringify(
+            {
+              ok: false,
+              error: {
+                code: "LOCAL_JSON_ERROR",
+                message: error.message
+              }
+            },
+            null,
+            2
+          );
+        }
+        return {};
+      }
+    }
+
+    async function sendRequest() {
+      const parsedPayload = safeParsePayload(true);
+      if (responseStatus.textContent === "Invalid JSON") {
+        return;
+      }
+
+      const url = endpoint.value.trim();
+      if (!url) {
+        setResponseStatus("Endpoint required", "error");
+        return;
+      }
+
+      const body = {
+        action: action.value,
+        payload: parsedPayload,
+        request_id: requestId.value.trim() || null
+      };
+
+      sendButton.disabled = true;
+      copyButton.disabled = true;
+      setResponseStatus("Sending…", "pending");
+      responseOutput.textContent = JSON.stringify(body, null, 2);
+
+      const startedAt = performance.now();
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
+        });
+
+        const elapsed = Math.round(performance.now() - startedAt);
+        const text = await response.text();
+
+        let parsed;
+        try {
+          parsed = JSON.parse(text);
+        } catch {
+          parsed = {
+            ok: false,
+            error: {
+              code: "NON_JSON_RESPONSE",
+              message: text || "The endpoint returned an empty response."
+            }
+          };
+        }
+
+        lastResponseText = JSON.stringify(parsed, null, 2);
+        responseOutput.textContent = lastResponseText;
+        copyButton.disabled = false;
+
+        setResponseStatus(
+          `${response.status} · ${elapsed} ms`,
+          response.ok ? "success" : "error"
+        );
+      } catch (error) {
+        const parsed = {
+          ok: false,
+          error: {
+            code: "NETWORK_ERROR",
+            message: error.message
+          }
+        };
+
+        lastResponseText = JSON.stringify(parsed, null, 2);
+        responseOutput.textContent = lastResponseText;
+        copyButton.disabled = false;
+        setResponseStatus("Network error", "error");
+      } finally {
+        updateByteCount();
+      }
+    }
+
+    function formatPayload() {
+      const parsed = safeParsePayload(true);
+      if (responseStatus.textContent === "Invalid JSON") {
+        return;
+      }
+
+      payload.value = JSON.stringify(parsed, null, 2);
+      updateByteCount();
+      setResponseStatus("JSON formatted", "");
+    }
+
+    function clearConsole() {
+      payload.value = "{}";
+      responseOutput.textContent = JSON.stringify(
+        {
+          message: "Request and response cleared."
+        },
+        null,
+        2
+      );
+      lastResponseText = "";
+      copyButton.disabled = true;
+      setResponseStatus("Cleared", "");
+      updateByteCount();
+    }
+
+    async function copyResponse() {
+      if (!lastResponseText) return;
+
+      try {
+        await navigator.clipboard.writeText(lastResponseText);
+        setResponseStatus("Response copied", "success");
+      } catch {
+        setResponseStatus("Copy failed", "error");
+      }
+    }
+
+    action.addEventListener("change", loadExample);
+    payload.addEventListener("input", updateByteCount);
+    requestId.addEventListener("input", updateByteCount);
+    sendButton.addEventListener("click", sendRequest);
+    exampleButton.addEventListener("click", loadExample);
+    formatButton.addEventListener("click", formatPayload);
+    clearButton.addEventListener("click", clearConsole);
+    copyButton.addEventListener("click", copyResponse);
+
+    loadExample();
+  </script>
+</body>
+</html>
