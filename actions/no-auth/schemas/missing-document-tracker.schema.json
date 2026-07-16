@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/missing-document-tracker.schema.json",
+  "title": "Funding Data Room Missing Document Tracker",
+  "description": "Structured operational tracker for received, missing, outdated, incomplete, conflicting, or review-needed funding-file items.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "statuses",
+    "rows",
+    "summary",
+    "human_review_required"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "statuses": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "Not Requested",
+          "Requested",
+          "Partially Received",
+          "Received",
+          "Outdated",
+          "Incomplete",
+          "Needs Explanation",
+          "Conflicting",
+          "Ready for Human Review",
+          "Not Applicable"
+        ]
+      }
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trackerRow"
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "total",
+        "blockers",
+        "fix_before_submission",
+        "improve_if_time_allows"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "blockers": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fix_before_submission": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "improve_if_time_allows": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "blocker_notice": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "follow_up_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "human_review_required": {
+      "type": "boolean"
+    }
+  },
+  "$defs": {
+    "trackerRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document",
+        "category",
+        "status",
+        "priority",
+        "owner",
+        "due_date",
+        "why_it_matters",
+        "next_action",
+        "human_review_required",
+        "notes"
+      ],
+      "properties": {
+        "document": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Not Requested",
+            "Requested",
+            "Partially Received",
+            "Received",
+            "Outdated",
+            "Incomplete",
+            "Needs Explanation",
+            "Conflicting",
+            "Ready for Human Review",
+            "Not Applicable"
+          ]
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "Blocker",
+            "Fix Before Submission",
+            "Improve If Time Allows"
+          ]
+        },
+        "owner": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "due_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Target date supplied by the caller or assigned by a human workflow."
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "title": "Missing Document Tracker \u2014 Ridgeway Electric LLC",
+      "statuses": [
+        "Not Requested",
+        "Requested",
+        "Partially Received",
+        "Received",
+        "Outdated",
+        "Incomplete",
+        "Needs Explanation",
+        "Conflicting",
+        "Ready for Human Review",
+        "Not Applicable"
+      ],
+      "rows": [
+        {
+          "document": "May bank statement",
+          "category": "Bank Statements",
+          "status": "Incomplete",
+          "priority": "Blocker",
+          "owner": "Business owner",
+          "due_date": "2026-07-18",
+          "why_it_matters": "The designated statement period is incomplete.",
+          "next_action": "Download the complete provider-generated PDF.",
+          "human_review_required": true,
+          "notes": "Two pages are missing."
+        }
+      ],
+      "summary": {
+        "total": 1,
+        "blockers": 1,
+        "fix_before_submission": 0,
+        "improve_if_time_allows": 0
+      },
+      "blocker_notice": "One or more operational Blockers require human confirmation before submission readiness can be reassessed.",
+      "follow_up_rules": [
+        "Assign one owner and a real due date."
+      ],
+      "human_review_required": true
+    }
+  ]
+}

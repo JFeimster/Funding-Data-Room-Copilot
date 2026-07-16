@@ -1,0 +1,295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/deal-snapshot.schema.json",
+  "title": "Funding Data Room Deal Snapshot",
+  "description": "Factual one-page funding-file summary prepared for human review without approval or underwriting conclusions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "title",
+    "business_identity",
+    "funding_request",
+    "revenue_context",
+    "documents_received",
+    "documents_missing",
+    "existing_debt",
+    "bank_statement_notes",
+    "positive_factors",
+    "potential_concerns",
+    "readiness_gaps",
+    "provisional_assumptions",
+    "focused_question",
+    "recommended_next_step",
+    "qa_classification",
+    "human_review_required",
+    "limitations"
+  ],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "business_identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "business_name",
+        "legal_entity",
+        "dba",
+        "industry",
+        "location",
+        "time_in_business",
+        "owner_name"
+      ],
+      "properties": {
+        "business_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legal_entity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dba": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "industry": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "location": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_in_business": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "owner_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "funding_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "requested_amount",
+        "minimum_useful_amount",
+        "use_of_funds",
+        "timing_need"
+      ],
+      "properties": {
+        "requested_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "minimum_useful_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "use_of_funds": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "timing_need": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "revenue_context": {
+      "type": "array"
+    },
+    "documents_received": {
+      "type": "array"
+    },
+    "documents_missing": {
+      "type": "array"
+    },
+    "existing_debt": {
+      "type": "array"
+    },
+    "bank_statement_notes": {
+      "type": "array"
+    },
+    "positive_factors": {
+      "type": "array"
+    },
+    "potential_concerns": {
+      "type": "array"
+    },
+    "readiness_gaps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/readinessGap"
+      }
+    },
+    "provisional_assumptions": {
+      "type": "array"
+    },
+    "focused_question": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "question",
+            "reason"
+          ],
+          "properties": {
+            "question": {
+              "type": "string"
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "recommended_next_step": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "qa_classification": {
+      "type": "string",
+      "enum": [
+        "Ready for Human Review",
+        "Hold \u2014 Blocker Present",
+        "Provisional \u2014 Confirmation Needed"
+      ]
+    },
+    "human_review_required": {
+      "const": true
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "readinessGap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "gap",
+        "priority",
+        "why_it_matters",
+        "next_action",
+        "suggested_owner",
+        "human_review_required"
+      ],
+      "properties": {
+        "gap": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "Blocker",
+            "Fix Before Submission",
+            "Improve If Time Allows"
+          ]
+        },
+        "why_it_matters": {
+          "type": "string"
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "suggested_owner": {
+          "type": "string"
+        },
+        "human_review_required": {
+          "type": "boolean"
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "title": "Funding Deal Snapshot \u2014 Ridgeway Electric LLC",
+      "business_identity": {
+        "business_name": "Ridgeway Electric LLC",
+        "legal_entity": "Virginia LLC",
+        "dba": null,
+        "industry": "Electrical contractor",
+        "location": "Richmond, Virginia",
+        "time_in_business": "4 years",
+        "owner_name": "Morgan Reed"
+      },
+      "funding_request": {
+        "requested_amount": 80000,
+        "minimum_useful_amount": 55000,
+        "use_of_funds": "Equipment, supplier deposits, and payroll timing",
+        "timing_need": null
+      },
+      "revenue_context": [],
+      "documents_received": [
+        "YTD P&L"
+      ],
+      "documents_missing": [
+        "May bank statement"
+      ],
+      "existing_debt": [],
+      "bank_statement_notes": [],
+      "positive_factors": [
+        "Specific use of funds"
+      ],
+      "potential_concerns": [
+        "May statement incomplete"
+      ],
+      "readiness_gaps": [
+        {
+          "gap": "May bank statement is missing or incomplete.",
+          "priority": "Blocker",
+          "why_it_matters": "The designated statement period is incomplete.",
+          "next_action": "Obtain the complete May bank statement.",
+          "suggested_owner": "Business owner",
+          "human_review_required": true
+        }
+      ],
+      "provisional_assumptions": [],
+      "focused_question": null,
+      "recommended_next_step": "Obtain the complete May bank statement.",
+      "qa_classification": "Hold \u2014 Blocker Present",
+      "human_review_required": true,
+      "limitations": [
+        "This snapshot supports organization and human review."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+openapi: 3.1.0
+info:
+  title: Funding Data Room Copilot — No-Auth Actions
+  version: 1.0.0
+  description: Stateless tools for organizing funding files, identifying readiness gaps, and preparing human-reviewed data room outputs.
+servers:
+  - url: https://YOUR-VERCEL-DOMAIN.vercel.app
+    description: Replace with the deployed Vercel production domain.
+paths:
+  /api/actions/public:
+    post:
+      operationId: runPublicAction
+      summary: Run a public Funding Data Room Copilot action
+      description: Runs one stateless organization or readiness action. It does not store data, predict approval, or replace human review.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PublicActionRequest'
+            examples:
+              folderStructure:
+                summary: Generate a contractor folder structure
+                value:
+                  action: generate_folder_structure
+                  payload:
+                    business_name: Acme Roofing LLC
+                    business_type: contractor
+                    user_role: business_owner
+                    funding_purpose: equipment
+                  request_id: req-folder-001
+              completePackage:
+                summary: Build a complete data room package
+                value:
+                  action: build_data_room_package
+                  payload:
+                    business_name: Northstar Goods Inc
+                    business_type: ecommerce
+                    user_role: business_owner
+                    funding_purpose: inventory
+                    requested_amount: 75000
+                    minimum_useful_amount: 50000
+                    documents_available:
+                      - June bank statement
+                      - Shopify payout report
+                    documents_missing:
+                      - Current debt schedule
+                  request_id: req-package-001
+              qaGate:
+                summary: Run the readiness QA gate
+                value:
+                  action: run_readiness_qa_gate
+                  payload:
+                    business_name: Ridgeway Electric LLC
+                    documents_available:
+                      - February bank statement
+                      - March bank statement
+                    documents_missing:
+                      - April bank statement
+                    readiness_gaps:
+                      - gap: April bank statement missing
+                        priority: Blocker
+                  request_id: req-qa-001
+      responses:
+        '200':
+          description: Action completed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicActionSuccess'
+        '400':
+          description: Invalid request, unsupported action, invalid payload, or privacy risk.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicActionError'
+        '405':
+          description: Method not allowed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicActionError'
+        '413':
+          description: JSON request exceeds the configured size limit.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicActionError'
+        '500':
+          description: Unexpected server error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublicActionError'
+components:
+  schemas:
+    ActionName:
+      type: string
+      description: Public action to run.
+      enum:
+        - build_data_room_package
+        - generate_folder_structure
+        - generate_document_checklist
+        - generate_file_naming_rules
+        - create_missing_document_tracker
+        - generate_deal_snapshot
+        - generate_privacy_checklist
+        - rewrite_context_notes
+        - run_readiness_qa_gate
+    PublicActionRequest:
+      type: object
+      additionalProperties: false
+      required:
+        - action
+        - payload
+      properties:
+        action:
+          $ref: '#/components/schemas/ActionName'
+        payload:
+          type: object
+          description: Action-specific metadata and summaries. Do not send credentials, binary files, or full identity numbers.
+          additionalProperties: true
+        request_id:
+          type:
+            - string
+            - 'null'
+          maxLength: 200
+          description: Optional client-generated identifier echoed in the response.
+    ResponseMeta:
+      type: object
+      required:
+        - version
+      properties:
+        version:
+          type: string
+          example: 1.0.0
+      additionalProperties: true
+    PublicActionSuccess:
+      type: object
+      additionalProperties: false
+      required:
+        - ok
+        - action
+        - data
+        - warnings
+        - human_review_required
+        - request_id
+        - meta
+      properties:
+        ok:
+          const: true
+        action:
+          type:
+            - string
+            - 'null'
+        data:
+          type: object
+          additionalProperties: true
+        warnings:
+          type: array
+          items:
+            type: string
+        human_review_required:
+          type: boolean
+        request_id:
+          type:
+            - string
+            - 'null'
+        meta:
+          $ref: '#/components/schemas/ResponseMeta'
+    ErrorDetail:
+      type: object
+      additionalProperties: true
+    PublicActionError:
+      type: object
+      additionalProperties: false
+      required:
+        - ok
+        - action
+        - error
+        - human_review_required
+        - request_id
+        - meta
+      properties:
+        ok:
+          const: false
+        action:
+          type:
+            - string
+            - 'null'
+        error:
+          type: object
+          additionalProperties: false
+          required:
+            - code
+            - message
+            - details
+          properties:
+            code:
+              type: string
+              enum:
+                - METHOD_NOT_ALLOWED
+                - INVALID_JSON
+                - INVALID_REQUEST
+                - UNKNOWN_ACTION
+                - INVALID_PAYLOAD
+                - PAYLOAD_TOO_LARGE
+                - PRIVACY_RISK
+                - INTERNAL_ERROR
+            message:
+              type: string
+            details:
+              type: array
+              items:
+                $ref: '#/components/schemas/ErrorDetail'
+        human_review_required:
+          type: boolean
+        request_id:
+          type:
+            - string
+            - 'null'
+        meta:
+          $ref: '#/components/schemas/ResponseMeta'

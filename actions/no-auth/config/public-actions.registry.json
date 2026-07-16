@@ -1,0 +1,127 @@
+{
+  "name": "Funding Data Room Copilot Public Actions",
+  "version": "1.0.0",
+  "dispatcher": "api/actions/public.js",
+  "endpoint": "/api/actions/public",
+  "serverless_function_count": 1,
+  "actions": [
+    {
+      "action": "build_data_room_package",
+      "label": "Build Data Room Package",
+      "description": "Builds the complete organization and readiness package.",
+      "module": "actions/no-auth/modules/build-data-room-package.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Business profile, document inventory, context, and workflow metadata.",
+      "output_summary": "Composite folder, checklist, tracker, snapshot, privacy, context, and QA package.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "generate_folder_structure",
+      "label": "Generate Folder Structure",
+      "description": "Creates a business-type-aware data room folder tree.",
+      "module": "actions/no-auth/modules/generate-folder-structure.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Business name, business type, role, and funding purpose.",
+      "output_summary": "Folder tree, folder descriptions, warnings, and next actions.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "generate_document_checklist",
+      "label": "Generate Document Checklist",
+      "description": "Creates a categorized funding document checklist.",
+      "module": "actions/no-auth/modules/generate-document-checklist.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Business type, role, purpose, and available or missing documents.",
+      "output_summary": "Checklist sections, item status, reasons, and review flags.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "generate_file_naming_rules",
+      "label": "Generate File Naming Rules",
+      "description": "Standardizes working-copy file names without altering originals.",
+      "module": "actions/no-auth/modules/generate-file-naming-rules.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Current file names and business metadata.",
+      "output_summary": "Naming formula, examples, mappings, warnings, and version rules.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "create_missing_document_tracker",
+      "label": "Create Missing Document Tracker",
+      "description": "Builds an operational tracker for missing and incomplete items.",
+      "module": "actions/no-auth/modules/create-missing-document-tracker.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Available, missing, incomplete, or conflicting document metadata.",
+      "output_summary": "Tracker rows with status, priority, owner, action, and review fields.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "generate_deal_snapshot",
+      "label": "Generate Deal Snapshot",
+      "description": "Creates a factual one-page funding file summary.",
+      "module": "actions/no-auth/modules/generate-deal-snapshot.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Business, request, document, debt, and context metadata.",
+      "output_summary": "Deal snapshot, readiness gaps, assumptions, next step, and QA classification.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "generate_privacy_checklist",
+      "label": "Generate Privacy Checklist",
+      "description": "Identifies redaction, credential, and sharing risks.",
+      "module": "actions/no-auth/modules/generate-privacy-checklist.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Privacy constraints and metadata describing submitted information.",
+      "output_summary": "Warnings, redaction checklist, privacy Blockers, and human-review actions.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "rewrite_context_notes",
+      "label": "Rewrite Context Notes",
+      "description": "Turns rough revenue or cash-flow notes into factual structured context.",
+      "module": "actions/no-auth/modules/rewrite-context-notes.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "One or more context events and supporting-document metadata.",
+      "output_summary": "Structured notes, questions, evidence suggestions, gaps, and warnings.",
+      "version": "1.0.0"
+    },
+    {
+      "action": "run_readiness_qa_gate",
+      "label": "Run Readiness QA Gate",
+      "description": "Classifies organizational readiness for human review.",
+      "module": "actions/no-auth/modules/run-readiness-qa-gate.js",
+      "public": true,
+      "requires_auth": false,
+      "stores_data": false,
+      "human_review_required": true,
+      "input_summary": "Document, privacy, debt, folder, snapshot, and readiness metadata.",
+      "output_summary": "Allowed QA classification, priority queues, next action, and owner.",
+      "version": "1.0.0"
+    }
+  ]
+}
+

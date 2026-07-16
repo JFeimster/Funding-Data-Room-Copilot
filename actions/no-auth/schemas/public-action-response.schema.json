@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/schemas/public-action-response.schema.json",
+  "title": "Funding Data Room Copilot Public Action Response",
+  "description": "Success or error response from the no-auth public action dispatcher.",
+  "oneOf": [
+    {
+      "title": "Success Response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "action",
+        "data",
+        "warnings",
+        "human_review_required",
+        "request_id",
+        "meta"
+      ],
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "data": {
+          "type": "object"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "request_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    },
+    {
+      "title": "Error Response",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "action",
+        "error",
+        "human_review_required",
+        "request_id",
+        "meta"
+      ],
+      "properties": {
+        "ok": {
+          "const": false
+        },
+        "action": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "code",
+            "message",
+            "details"
+          ],
+          "properties": {
+            "code": {
+              "type": "string",
+              "enum": [
+                "METHOD_NOT_ALLOWED",
+                "INVALID_JSON",
+                "INVALID_REQUEST",
+                "UNKNOWN_ACTION",
+                "INVALID_PAYLOAD",
+                "PAYLOAD_TOO_LARGE",
+                "PRIVACY_RISK",
+                "INTERNAL_ERROR"
+              ]
+            },
+            "message": {
+              "type": "string"
+            },
+            "details": {
+              "type": "array"
+            }
+          }
+        },
+        "human_review_required": {
+          "type": "boolean"
+        },
+        "request_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "version"
+          ],
+          "properties": {
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      }
+    }
+  ],
+  "examples": [
+    {
+      "ok": true,
+      "action": "generate_folder_structure",
+      "data": {
+        "package_name": "Funding Data Room - Acme Roofing LLC"
+      },
+      "warnings": [],
+      "human_review_required": true,
+      "request_id": "req-folder-001",
+      "meta": {
+        "version": "1.0.0"
+      }
+    },
+    {
+      "ok": false,
+      "action": "unknown_action",
+      "error": {
+        "code": "UNKNOWN_ACTION",
+        "message": "The requested public action is not supported.",
+        "details": []
+      },
+      "human_review_required": false,
+      "request_id": null,
+      "meta": {
+        "version": "1.0.0"
+      }
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/actions/no-auth/schemas/data-room-package.schema.json",
+  "title": "Funding Data Room Copilot Composite Package",
+  "description": "Composite no-auth package containing folder structure, checklist, naming rules, tracker, snapshot, privacy review, context notes, and readiness QA.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "package_summary",
+    "folder_structure",
+    "document_checklist",
+    "file_naming_rules",
+    "missing_document_tracker",
+    "deal_snapshot",
+    "privacy_checklist",
+    "context_notes",
+    "readiness_qa",
+    "warnings",
+    "next_best_actions",
+    "human_review_required",
+    "final_reminder"
+  ],
+  "properties": {
+    "package_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "package_name",
+        "business_name",
+        "business_type",
+        "user_role",
+        "requested_amount",
+        "minimum_useful_amount",
+        "funding_purpose",
+        "qa_classification",
+        "blocker_count",
+        "fix_before_submission_count",
+        "improve_if_time_allows_count"
+      ],
+      "properties": {
+        "package_name": {
+          "type": "string"
+        },
+        "business_name": {
+          "type": "string"
+        },
+        "business_type": {
+          "type": "string"
+        },
+        "user_role": {
+          "type": "string"
+        },
+        "requested_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "minimum_useful_amount": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "funding_purpose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "qa_classification": {
+          "type": "string",
+          "enum": [
+            "Ready for Human Review",
+            "Hold \u2014 Blocker Present",
+            "Provisional \u2014 Confirmation Needed"
+          ]
+        },
+        "blocker_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "fix_before_submission_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "improve_if_time_allows_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "folder_structure": {
+      "type": "object"
+    },
+    "document_checklist": {
+      "type": "object"
+    },
+    "file_naming_rules": {
+      "type": "object"
+    },
+    "missing_document_tracker": {
+      "$ref": "./missing-document-tracker.schema.json"
+    },
+    "deal_snapshot": {
+      "$ref": "./deal-snapshot.schema.json"
+    },
+    "privacy_checklist": {
+      "type": "object",
+      "required": [
+        "privacy_status",
+        "prohibited_inputs",
+        "redaction_checklist",
+        "storage_and_sharing_reminders",
+        "privacy_blockers",
+        "privacy_improvements",
+        "warnings",
+        "stop_processing",
+        "human_review_requirements",
+        "human_review_required"
+      ],
+      "additionalProperties": true
+    },
+    "context_notes": {
+      "type": "object",
+      "required": [
+        "title",
+        "notes",
+        "global_constraints",
+        "warnings",
+        "human_review_required"
+      ],
+      "additionalProperties": true
+    },
+    "readiness_qa": {
+      "type": "object",
+      "required": [
+        "classification",
+        "allowed_classifications",
+        "checks",
+        "blockers",
+        "fix_before_submission",
+        "improve_if_time_allows",
+        "provisional_assumptions",
+        "focused_question",
+        "next_action",
+        "suggested_owner",
+        "pass_hold_summary",
+        "human_review_required",
+        "limitations"
+      ],
+      "additionalProperties": true
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_best_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "priority",
+          "action",
+          "owner",
+          "source",
+          "human_review_required"
+        ],
+        "properties": {
+          "priority": {
+            "type": "string",
+            "enum": [
+              "Blocker",
+              "Fix Before Submission",
+              "Improve If Time Allows"
+            ]
+          },
+          "action": {
+            "type": "string"
+          },
+          "owner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": "string"
+          },
+          "human_review_required": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "human_review_required": {
+      "const": true
+    },
+    "final_reminder": {
+      "type": "string"
+    }
+  },
+  "examples": [
+    {
+      "package_summary": {
+        "package_name": "Funding Data Room - Ridgeway_Electric_LLC",
+        "business_name": "Ridgeway Electric LLC",
+        "business_type": "contractor",
+        "user_role": "business_owner",
+        "requested_amount": 80000,
+        "minimum_useful_amount": 55000,
+        "funding_purpose": "equipment",
+        "qa_classification": "Hold \u2014 Blocker Present",
+        "blocker_count": 1,
+        "fix_before_submission_count": 1,
+        "improve_if_time_allows_count": 0
+      },
+      "folder_structure": {},
+      "document_checklist": {},
+      "file_naming_rules": {},
+      "missing_document_tracker": {
+        "title": "Missing Document Tracker \u2014 Ridgeway Electric LLC",
+        "statuses": [],
+        "rows": [],
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "fix_before_submission": 0,
+          "improve_if_time_allows": 0
+        },
+        "blocker_notice": null,
+        "follow_up_rules": [],
+        "human_review_required": true
+      },
+      "deal_snapshot": {
+        "title": "Funding Deal Snapshot \u2014 Ridgeway Electric LLC",
+        "business_identity": {
+          "business_name": "Ridgeway Electric LLC",
+          "legal_entity": null,
+          "dba": null,
+          "industry": "contractor",
+          "location": null,
+          "time_in_business": null,
+          "owner_name": null
+        },
+        "funding_request": {
+          "requested_amount": 80000,
+          "minimum_useful_amount": 55000,
+          "use_of_funds": "equipment",
+          "timing_need": null
+        },
+        "revenue_context": [],
+        "documents_received": [],
+        "documents_missing": [],
+        "existing_debt": [],
+        "bank_statement_notes": [],
+        "positive_factors": [],
+        "potential_concerns": [],
+        "readiness_gaps": [],
+        "provisional_assumptions": [],
+        "focused_question": null,
+        "recommended_next_step": "Human review",
+        "qa_classification": "Ready for Human Review",
+        "human_review_required": true,
+        "limitations": []
+      },
+      "privacy_checklist": {
+        "privacy_status": "Review Required",
+        "prohibited_inputs": [],
+        "redaction_checklist": [],
+        "storage_and_sharing_reminders": [],
+        "privacy_blockers": [],
+        "privacy_improvements": [],
+        "warnings": [],
+        "stop_processing": false,
+        "human_review_requirements": [],
+        "human_review_required": true
+      },
+      "context_notes": {
+        "title": "Revenue and Cash-Flow Context Notes \u2014 Ridgeway Electric LLC",
+        "notes": [],
+        "global_constraints": [],
+        "warnings": [],
+        "human_review_required": true
+      },
+      "readiness_qa": {
+        "classification": "Ready for Human Review",
+        "allowed_classifications": [
+          "Ready for Human Review",
+          "Hold \u2014 Blocker Present",
+          "Provisional \u2014 Confirmation Needed"
+        ],
+        "checks": {},
+        "blockers": [],
+        "fix_before_submission": [],
+        "improve_if_time_allows": [],
+        "provisional_assumptions": [],
+        "focused_question": null,
+        "next_action": "Human review",
+        "suggested_owner": "Authorized human reviewer",
+        "pass_hold_summary": {
+          "blocker_count": 0,
+          "fix_before_submission_count": 0,
+          "improve_if_time_allows_count": 0,
+          "provisional_assumption_count": 0
+        },
+        "human_review_required": true,
+        "limitations": []
+      },
+      "warnings": [],
+      "next_best_actions": [],
+      "human_review_required": true,
+      "final_reminder": "Final review still needs a human."
+    }
+  ]
+}

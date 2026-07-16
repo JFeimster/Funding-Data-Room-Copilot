@@ -1,0 +1,11 @@
+{
+  "name": "funding-data-room-copilot",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "validate:json": "node scripts/validate-json.js",
+    "validate:imports": "node scripts/validate-imports.js",
+    "validate:openapi": "node scripts/validate-openapi.js"
+  }
+}

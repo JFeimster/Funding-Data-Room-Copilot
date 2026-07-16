@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://YOUR-VERCEL-DOMAIN.vercel.app/schemas/public-action-request.schema.json",
+  "title": "Funding Data Room Copilot Public Action Request",
+  "description": "Shared request contract for the stateless no-auth public action dispatcher.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "action",
+    "payload"
+  ],
+  "properties": {
+    "action": {
+      "type": "string",
+      "enum": [
+        "build_data_room_package",
+        "generate_folder_structure",
+        "generate_document_checklist",
+        "generate_file_naming_rules",
+        "create_missing_document_tracker",
+        "generate_deal_snapshot",
+        "generate_privacy_checklist",
+        "rewrite_context_notes",
+        "run_readiness_qa_gate"
+      ],
+      "description": "The public action the dispatcher should run."
+    },
+    "payload": {
+      "type": "object",
+      "description": "Action-specific metadata and summaries. Do not send credentials, binary files, or full identity numbers.",
+      "additionalProperties": true
+    },
+    "request_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 200,
+      "description": "Optional client-generated identifier echoed in the response."
+    }
+  },
+  "examples": [
+    {
+      "action": "generate_folder_structure",
+      "payload": {
+        "business_name": "Acme Roofing LLC",
+        "business_type": "contractor",
+        "user_role": "business_owner",
+        "funding_purpose": "equipment"
+      },
+      "request_id": "req-folder-001"
+    }
+  ]
+}
