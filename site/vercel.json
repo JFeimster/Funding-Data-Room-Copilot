@@ -1,5 +1,13 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "installCommand": "",
+  "git": {
+    "deploymentEnabled": {
+      "*": false,
+      "main": false
+    }
+  },
   "headers": [
     {
       "source": "/api/actions/public",
