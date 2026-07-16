@@ -32,33 +32,23 @@ actions/no-auth/openapi/
 
 ## Funding Data Room Copilot CTA
 
-Edit the configuration object near the top of:
-
-```text
-site/script.js
-```
-
-Replace:
+The production Custom GPT URL is configured in `site/script.js`:
 
 ```text
 https://chatgpt.com/g/g-6a580c6ec5648191a2d27f4528015f3f-funding-data-room-copilot
 ```
 
-with the Funding Data Room Copilot Custom GPT URL.
-
-The previously supplied Agent Launch Site Builder URL is the site-building GPT, not the product CTA, so it is not used as the Funding Data Room Copilot launch destination.
+The Agent Launch Site Builder URL is a separate build tool and is not used as the product CTA.
 
 ## Production Domain
 
-Replace every occurrence of:
+The production domain is configured as:
 
 ```text
-https://funding-data-room-copilot.vercel.app
+https://funding-data-room-copilot.vercel.app/
 ```
 
-after the controlled Vercel production deployment.
-
-This updates canonical URLs, Open Graph URLs, social-image URLs, and JSON-LD page URLs.
+Canonical URLs, Open Graph URLs, social-image URLs, JSON-LD URLs, schemas, and the OpenAPI server use this domain.
 
 ## Local Static Preview
 
