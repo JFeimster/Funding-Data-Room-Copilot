@@ -202,7 +202,7 @@ https://funding-data-room-copilot.vercel.app/api/actions/public
 
 1. Deploy the project.
 2. Open `actions/no-auth/openapi/no-auth-actions.openapi.yaml`.
-3. Replace `https://funding-data-room-copilot.vercel.app` with the production domain.
+3. Confirm the OpenAPI server is `https://funding-data-room-copilot.vercel.app`.
 4. Add the OpenAPI document to the GPT Action configuration.
 5. Select no authentication.
 6. Test `generate_folder_structure`.
