@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>No-Auth Test Console | Funding Data Room Copilot</title><meta name="description" content="Test all nine Funding Data Room Copilot no-auth actions with safe metadata and structured JSON output.">
-<link rel="canonical" href="https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/no-auth-test.html">
-<meta property="og:type" content="website"><meta property="og:title" content="No-Auth Test Console | Funding Data Room Copilot"><meta property="og:description" content="Test all nine Funding Data Room Copilot no-auth actions with safe metadata and structured JSON output.">
-<meta property="og:url" content="https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/no-auth-test.html"><meta property="og:image" content="https://YOUR-VERCEL-DOMAIN.vercel.app/assets/images/social/funding-data-room-og.svg">
+<title>Package Builder | Funding Data Room Copilot</title><meta name="description" content="Generate a complete funding data room package with folder structure, checklist, tracker, snapshot, privacy, and QA.">
+<link rel="canonical" href="https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/package-builder.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Package Builder | Funding Data Room Copilot"><meta property="og:description" content="Generate a complete funding data room package with folder structure, checklist, tracker, snapshot, privacy, and QA.">
+<meta property="og:url" content="https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/package-builder.html"><meta property="og:image" content="https://YOUR-VERCEL-DOMAIN.vercel.app/assets/images/social/funding-data-room-og.svg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../../assets/icons/favicon/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="../styles.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/"}, {"@type": "ListItem", "position": 2, "name": "No-Auth Action Console", "item": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/no-auth-test.html"}]}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/"}, {"@type": "ListItem", "position": 2, "name": "Build the Whole Data Room Package", "item": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/tools/package-builder.html"}]}</script></head>
 <body data-page="tools">
 
 <a class="skip-link" href="#main">Skip to content</a>
@@ -20,12 +20,12 @@
   <details class="mobile-nav"><summary>MENU</summary><nav><a href="../index.html">Home</a><a href="../pages/getting-started.html">Start</a><a href="../pages/actions.html">Actions</a><a href="../pages/templates.html">Templates</a><a href="../pages/privacy.html">Privacy</a><a href="../pages/testing.html">Testing</a><a data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch GPT ↗</a></nav></details>
 </header>
 
-<main id="main" data-tool="generic">
+<main id="main" data-tool="package">
   <section class="tool-layout">
     <div class="tool-form-panel">
       <div class="section-kicker">Live no-auth tool</div>
-      <h1 class="tool-heading">No-Auth Action Console</h1>
-      <p class="tool-intro">One endpoint. Nine actions. Use safe fictional metadata and keep private documents out of the browser.</p>
+      <h1 class="tool-heading">Build the Whole Data Room Package</h1>
+      <p class="tool-intro">Turn safe business metadata and document inventory into the complete operating package. Review every section against source records.</p>
 
 <aside class="privacy-banner" role="note">
   <div class="privacy-banner-icon" aria-hidden="true">!</div>
@@ -35,21 +35,19 @@
       <form data-tool-form onsubmit="return false">
 
 <div class="form-grid">
-  <div class="field"><label for="action">Action</label><select id="action" name="action">
-    <option value="build_data_room_package">Build Data Room Package</option>
-    <option value="generate_folder_structure">Generate Folder Structure</option>
-    <option value="generate_document_checklist">Generate Document Checklist</option>
-    <option value="generate_file_naming_rules">Generate File Naming Rules</option>
-    <option value="create_missing_document_tracker">Create Missing-Document Tracker</option>
-    <option value="generate_deal_snapshot">Generate Deal Snapshot</option>
-    <option value="generate_privacy_checklist">Generate Privacy Checklist</option>
-    <option value="rewrite_context_notes">Rewrite Context Notes</option>
-    <option value="run_readiness_qa_gate">Run Readiness QA Gate</option>
-  </select></div>
-  <div class="field"><label for="request_id">Request ID</label><input id="request_id" name="request_id" value="browser-test-001" maxlength="200"></div>
-  <div class="field field-full"><label for="payload_json">Payload JSON</label><textarea class="code-editor" id="payload_json" name="payload_json" spellcheck="false">{}</textarea><p class="form-help">The console wraps this object in the shared request contract.</p></div>
+  <div class="field"><label for="business_name">Business name</label><input id="business_name" name="business_name"></div>
+  <div class="field"><label for="business_type">Business type</label><select id="business_type" name="business_type"><option value="contractor">Contractor</option><option value="ecommerce">Ecommerce</option><option value="restaurant">Restaurant</option><option value="agency">Agency</option><option value="clinic">Clinic</option><option value="local_service_business">Local service</option><option value="funding_broker">Funding broker</option><option value="generic_small_business">Generic small business</option></select></div>
+  <div class="field"><label for="user_role">Role</label><select id="user_role" name="user_role"><option value="business_owner">Business owner</option><option value="broker">Broker</option><option value="processor">Processor</option><option value="referral_partner">Referral partner</option></select></div>
+  <div class="field"><label for="funding_purpose">Funding purpose</label><input id="funding_purpose" name="funding_purpose"></div>
+  <div class="field"><label for="requested_amount">Requested amount</label><input id="requested_amount" name="requested_amount" type="number" min="0"></div>
+  <div class="field"><label for="minimum_useful_amount">Minimum useful amount</label><input id="minimum_useful_amount" name="minimum_useful_amount" type="number" min="0"></div>
+  <div class="field field-full"><label for="documents_available">Documents available · one per line</label><textarea id="documents_available" name="documents_available"></textarea></div>
+  <div class="field field-full"><label for="documents_missing">Documents missing · one per line</label><textarea id="documents_missing" name="documents_missing"></textarea></div>
+  <div class="field field-full"><label for="current_file_names">Current file names · one per line</label><textarea id="current_file_names" name="current_file_names"></textarea></div>
+
+<div class="field field-full"><label for="request_id">Request ID</label><input id="request_id" name="request_id" value="site-test-001" maxlength="200"></div>
+
 </div>
-<div class="tool-actions"><button class="button button-ghost" type="button" data-format-json>Format JSON</button></div>
 
         <div class="request-meter"><span>Request size</span><span data-request-meter>0 / 131,072 bytes</span></div>
         <div class="tool-actions">

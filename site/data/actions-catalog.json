@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "actions": [
+    {
+      "id": "build_data_room_package",
+      "label": "Build Data Room Package",
+      "description": "Assemble the complete folder, checklist, naming, tracker, snapshot, privacy, context, and QA package.",
+      "best_for": [
+        "complete intake",
+        "broker handoff",
+        "owner readiness workflow"
+      ],
+      "typical_inputs": [
+        "business profile",
+        "funding request",
+        "available and missing documents"
+      ],
+      "key_outputs": [
+        "package summary",
+        "folder tree",
+        "tracker",
+        "deal snapshot",
+        "readiness QA"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "metadata-only",
+      "human_review_required": true,
+      "tool_url": "../tools/package-builder.html"
+    },
+    {
+      "id": "generate_folder_structure",
+      "label": "Generate Folder Structure",
+      "description": "Create a business-type-aware folder tree with descriptions and sensitive-folder warnings.",
+      "best_for": [
+        "new data rooms",
+        "clean reorganizations",
+        "broker intake"
+      ],
+      "typical_inputs": [
+        "business name",
+        "business type",
+        "role",
+        "funding purpose"
+      ],
+      "key_outputs": [
+        "copy-ready tree",
+        "folder descriptions",
+        "business-specific additions"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "low",
+      "human_review_required": true,
+      "tool_url": "../tools/folder-structure-builder.html"
+    },
+    {
+      "id": "generate_document_checklist",
+      "label": "Generate Document Checklist",
+      "description": "Build a categorized checklist that marks received, requested, and not-yet-requested items.",
+      "best_for": [
+        "document intake",
+        "processor review",
+        "client follow-up"
+      ],
+      "typical_inputs": [
+        "business type",
+        "role",
+        "available documents",
+        "missing documents"
+      ],
+      "key_outputs": [
+        "sectioned checklist",
+        "item status",
+        "why it matters"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "metadata-only",
+      "human_review_required": true,
+      "tool_url": "../pages/actions.html#generate-document-checklist"
+    },
+    {
+      "id": "generate_file_naming_rules",
+      "label": "Generate File Naming Rules",
+      "description": "Turn vague download names into consistent working-copy names without overwriting originals.",
+      "best_for": [
+        "messy folders",
+        "version control",
+        "broker operations"
+      ],
+      "typical_inputs": [
+        "business name",
+        "current file names"
+      ],
+      "key_outputs": [
+        "naming formula",
+        "suggested names",
+        "privacy warnings"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "file-name review",
+      "human_review_required": true,
+      "tool_url": "../pages/actions.html#generate-file-naming-rules"
+    },
+    {
+      "id": "create_missing_document_tracker",
+      "label": "Create Missing-Document Tracker",
+      "description": "Assign statuses, priorities, owners, and next actions to open document items.",
+      "best_for": [
+        "follow-up management",
+        "broker queues",
+        "owner accountability"
+      ],
+      "typical_inputs": [
+        "received items",
+        "missing items",
+        "status notes"
+      ],
+      "key_outputs": [
+        "operational tracker",
+        "priority",
+        "owner",
+        "next action"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "metadata-only",
+      "human_review_required": true,
+      "tool_url": "../tools/missing-document-tracker.html"
+    },
+    {
+      "id": "generate_deal_snapshot",
+      "label": "Generate Deal Snapshot",
+      "description": "Create a factual one-page summary of the business, request, documents, gaps, and next step.",
+      "best_for": [
+        "human review",
+        "handoffs",
+        "internal deal summaries"
+      ],
+      "typical_inputs": [
+        "business profile",
+        "funding request",
+        "documents",
+        "debt",
+        "context"
+      ],
+      "key_outputs": [
+        "business identity",
+        "request summary",
+        "gaps",
+        "QA classification"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "redacted facts",
+      "human_review_required": true,
+      "tool_url": "../pages/actions.html#generate-deal-snapshot"
+    },
+    {
+      "id": "generate_privacy_checklist",
+      "label": "Generate Privacy Checklist",
+      "description": "Identify credentials, unrestricted sharing, mixed-client files, identity exposure, and redaction needs.",
+      "best_for": [
+        "pre-share review",
+        "clinic workflows",
+        "broker operations"
+      ],
+      "typical_inputs": [
+        "privacy constraints",
+        "sharing notes",
+        "document metadata"
+      ],
+      "key_outputs": [
+        "privacy blockers",
+        "redaction checklist",
+        "stop-processing flag"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "privacy-sensitive",
+      "human_review_required": true,
+      "tool_url": "../pages/privacy.html"
+    },
+    {
+      "id": "rewrite_context_notes",
+      "label": "Rewrite Context Notes",
+      "description": "Convert rough cash-flow notes into factual, source-aware explanations with reviewer questions.",
+      "best_for": [
+        "large transactions",
+        "seasonality",
+        "payout delays",
+        "one-time events"
+      ],
+      "typical_inputs": [
+        "event type",
+        "period",
+        "amount",
+        "explanation",
+        "supporting records"
+      ],
+      "key_outputs": [
+        "plain-English note",
+        "support suggestions",
+        "open facts"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "redacted facts",
+      "human_review_required": true,
+      "tool_url": "../pages/actions.html#rewrite-context-notes"
+    },
+    {
+      "id": "run_readiness_qa_gate",
+      "label": "Run Readiness QA Gate",
+      "description": "Classify the file as ready, held by a blocker, or provisional pending confirmation.",
+      "best_for": [
+        "pre-handoff QA",
+        "broker review",
+        "submission preparation"
+      ],
+      "typical_inputs": [
+        "available documents",
+        "missing documents",
+        "readiness gaps"
+      ],
+      "key_outputs": [
+        "classification",
+        "blockers",
+        "fixes",
+        "next action"
+      ],
+      "endpoint": "/api/actions/public",
+      "privacy_level": "metadata-only",
+      "human_review_required": true,
+      "tool_url": "../tools/readiness-qa.html"
+    }
+  ]
+}

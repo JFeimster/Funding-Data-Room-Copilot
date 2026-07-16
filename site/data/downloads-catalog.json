@@ -1,0 +1,65 @@
+{
+  "version": "1.0.0",
+  "items": [
+    {
+      "id": "openapi",
+      "label": "No-Auth OpenAPI",
+      "description": "OpenAPI 3.1 contract for the public dispatcher.",
+      "file_path": "https://github.com/JFeimster/Funding-Data-Room-Copilot/blob/main/actions/no-auth/openapi/no-auth-actions.openapi.yaml",
+      "format": "YAML",
+      "version": "1.0.0",
+      "public_availability": "repository",
+      "category": "developer"
+    },
+    {
+      "id": "request-schema",
+      "label": "Public Request Schema",
+      "description": "JSON Schema for shared action requests.",
+      "file_path": "https://github.com/JFeimster/Funding-Data-Room-Copilot/blob/main/actions/no-auth/schemas/public-action-request.schema.json",
+      "format": "JSON",
+      "version": "1.0.0",
+      "public_availability": "repository",
+      "category": "developer"
+    },
+    {
+      "id": "response-schema",
+      "label": "Public Response Schema",
+      "description": "JSON Schema for shared action responses.",
+      "file_path": "https://github.com/JFeimster/Funding-Data-Room-Copilot/blob/main/actions/no-auth/schemas/public-action-response.schema.json",
+      "format": "JSON",
+      "version": "1.0.0",
+      "public_availability": "repository",
+      "category": "developer"
+    },
+    {
+      "id": "tracker-template",
+      "label": "Missing-Document Tracker Template",
+      "description": "Operational tracker for status, owner, priority, and next action.",
+      "file_path": null,
+      "format": "CSV / Markdown",
+      "version": "planned",
+      "public_availability": "planned",
+      "category": "template"
+    },
+    {
+      "id": "snapshot-template",
+      "label": "Deal Snapshot Template",
+      "description": "One-page factual handoff structure.",
+      "file_path": null,
+      "format": "Markdown",
+      "version": "planned",
+      "public_availability": "planned",
+      "category": "template"
+    },
+    {
+      "id": "knowledge-pack",
+      "label": "GPT Knowledge Pack",
+      "description": "Curated knowledge files for the Custom GPT.",
+      "file_path": null,
+      "format": "ZIP",
+      "version": "planned",
+      "public_availability": "planned",
+      "category": "knowledge"
+    }
+  ]
+}

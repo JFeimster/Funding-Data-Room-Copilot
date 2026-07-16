@@ -1,17 +1,296 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Funding Data Room Copilot</title>
-  <meta name="description" content="Organize funding files, identify readiness gaps, and prepare cleaner human-reviewed handoffs.">
-  <link rel="stylesheet" href="/site/styles.css">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funding Data Room Copilot | Organize Funding Files</title>
+<meta name="description" content="Organize funding files, track missing documents, create deal snapshots, and identify readiness gaps before human review.">
+<link rel="canonical" href="https://YOUR-VERCEL-DOMAIN.vercel.app/site/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Funding Data Room Copilot | Organize Funding Files">
+<meta property="og:description" content="Organize funding files, track missing documents, create deal snapshots, and identify readiness gaps before human review.">
+<meta property="og:url" content="https://YOUR-VERCEL-DOMAIN.vercel.app/site/index.html">
+<meta property="og:image" content="https://YOUR-VERCEL-DOMAIN.vercel.app/assets/images/social/funding-data-room-og.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Funding Data Room Copilot | Organize Funding Files">
+<meta name="twitter:description" content="Organize funding files, track missing documents, create deal snapshots, and identify readiness gaps before human review.">
+<meta name="twitter:image" content="https://YOUR-VERCEL-DOMAIN.vercel.app/assets/images/social/funding-data-room-og.svg">
+<link rel="icon" href="../assets/icons/favicon/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Funding Data Room Copilot", "applicationCategory": "BusinessApplication", "operatingSystem": "Web", "description": "Organize funding files, track missing documents, create deal snapshots, and identify readiness gaps before human review.", "url": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/", "featureList": ["Build Data Room Package", "Generate Folder Structure", "Generate Document Checklist", "Generate File Naming Rules", "Create Missing-Document Tracker", "Generate Deal Snapshot", "Generate Privacy Checklist", "Rewrite Context Notes", "Run Readiness QA Gate"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Funding Data Room Copilot", "url": "https://YOUR-VERCEL-DOMAIN.vercel.app/site/"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is a funding data room?", "acceptedAnswer": {"@type": "Answer", "text": "A funding data room is an organized set of business, ownership, banking, financial, tax, debt, request, and supporting records prepared for controlled human review."}}, {"@type": "Question", "name": "What documents belong in a business funding data room?", "acceptedAnswer": {"@type": "Answer", "text": "Requirements vary, but common categories include business identity, ownership records, complete bank statements, current financials, tax records when requested, debt schedules, use-of-funds support, and factual context notes."}}, {"@type": "Question", "name": "Can AI organize business loan documents?", "acceptedAnswer": {"@type": "Answer", "text": "AI can help structure metadata, checklists, trackers, file names, summaries, and readiness gaps. It should not replace human verification or receive unnecessary credentials and identity data."}}, {"@type": "Question", "name": "Does Funding Data Room Copilot approve business funding?", "acceptedAnswer": {"@type": "Answer", "text": "No. It does not determine eligibility, predict approval, price financing, or replace underwriting."}}, {"@type": "Question", "name": "Is it safe to paste bank statements into a Custom GPT?", "acceptedAnswer": {"@type": "Answer", "text": "Use document metadata, redacted facts, and secure references instead of pasting raw statements or unnecessary private information."}}, {"@type": "Question", "name": "What is a missing-document tracker?", "acceptedAnswer": {"@type": "Answer", "text": "It records each item\u2019s status, priority, owner, due date, why it matters, and next action."}}, {"@type": "Question", "name": "How does the readiness QA gate work?", "acceptedAnswer": {"@type": "Answer", "text": "It organizes issues into Blocker, Fix Before Submission, and Improve If Time Allows, then returns one approved human-review classification."}}, {"@type": "Question", "name": "Can funding brokers use this with clients?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Brokers and processors can standardize intake, separate original files from internal QA, assign next actions, and prepare cleaner human handoffs."}}, {"@type": "Question", "name": "What does Ready for Human Review mean?", "acceptedAnswer": {"@type": "Answer", "text": "No identified operational Blocker remains in the supplied metadata. It does not mean approved, eligible, or underwritten."}}, {"@type": "Question", "name": "Can the GPT create folders in Google Drive or Dropbox?", "acceptedAnswer": {"@type": "Answer", "text": "The current no-auth version generates the structure and plan. Connected workspace creation requires a later user-authorized integration."}}]}</script>
 </head>
-<body>
-  <main>
-    <h1>Funding Data Room Copilot</h1>
-    <p>Organization first. Readiness guidance second. Underwriting never.</p>
-  </main>
-  <script src="/site/script.js"></script>
+<body data-page="home">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announcement">
+  <span>Funding-file chaos in. Review-ready structure out.</span>
+  <span class="announcement-links">
+    <a href="pages/actions.html">View actions</a>
+    <a href="pages/privacy.html">Privacy rules</a>
+    <a href="tools/no-auth-test.html">Test console</a>
+  </span>
+</div>
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Funding Data Room Copilot home">
+    <span class="brand-mark" aria-hidden="true">FDR</span>
+    <span class="brand-copy"><strong>Funding Data Room</strong><span>Copilot</span></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Primary navigation"><a class="nav-link is-active" href="index.html">Home</a><a class="nav-link" href="pages/getting-started.html">Start</a><a class="nav-link" href="pages/actions.html">Actions</a><a class="nav-link" href="pages/templates.html">Templates</a><a class="nav-link" href="pages/privacy.html">Privacy</a><a class="nav-link" href="pages/testing.html">Testing</a></nav>
+  <div class="header-actions">
+    <a class="button button-small button-ghost" href="tools/no-auth-test.html">Test actions</a>
+    <a class="button button-small button-primary" data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch GPT ↗</a>
+  </div>
+  <details class="mobile-nav">
+    <summary aria-label="Open navigation">MENU</summary>
+    <nav aria-label="Mobile navigation"><a href="index.html">Home</a><a href="pages/getting-started.html">Start</a><a href="pages/actions.html">Actions</a><a href="pages/templates.html">Templates</a><a href="pages/privacy.html">Privacy</a><a href="pages/testing.html">Testing</a><a data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch GPT ↗</a></nav>
+  </details>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="section-kicker">Funding Readiness Operations</div>
+      <h1>Turn Funding <span>Chaos</span> Into a Review-Ready Data Room</h1>
+      <p class="hero-answer">Funding Data Room Copilot helps business owners and funding professionals organize documents, build checklists, track missing items, create factual deal snapshots, and identify readiness gaps before human review. It improves file clarity without pretending AI can approve, underwrite, or guarantee funding.</p>
+      <div class="hero-actions"><a class="button button-primary" data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch Funding Data Room Copilot ↗</a><a class="button button-secondary" href="tools/no-auth-test.html">Test the Public Actions →</a></div>
+      <div class="proof-strip"><div class="proof-item">Nine structured no-auth actions</div><div class="proof-item">Metadata-first privacy model</div><div class="proof-item">Business-type-aware output</div><div class="proof-item">Human review built in</div></div>
+    </div>
+    <div class="hero-visual" aria-label="Data room assembly interface">
+      <div class="assembly-card">
+        <div class="assembly-top"><span>Data Room Assembly / Ridgeway Electric</span><span class="assembly-status">Processing</span></div>
+        <div class="assembly-body">
+          <div class="intake-chaos"><span class="file-chip bad" style="--tilt:-2deg">final-final-2.pdf</span><span class="file-chip" style="--tilt:2deg">May Statement.pdf</span><span class="file-chip bad" style="--tilt:-1deg">IMG_4021.jpg</span><span class="file-chip" style="--tilt:1deg">equipment quote.xlsx</span></div>
+          <div class="folder-stack">
+            <div class="folder-row"><span class="folder-icon"></span><span>00_Read_Me_and_Status</span><span class="status-chip status-ready">Classified</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>01_Business_Identity</span><span class="status-chip status-ready">Ready</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>03_Bank_Statements</span><span class="status-chip status-blocker">Missing</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>06_Revenue_and_Cash_Flow_Context</span><span class="status-chip status-fix">Needs context</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>09_Missing_Document_Tracker</span><span class="status-chip status-ready">Assigned</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>10_Deal_Snapshot</span><span class="status-chip status-provisional">Provisional</span></div>
+            <div class="folder-row"><span class="folder-icon"></span><span>12_Final_Human_Review_Packet</span><span class="status-chip status-fix">Hold</span></div>
+          </div>
+          <div class="assembly-meter"><span></span><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="summary-band">
+    <article class="summary-card"><span class="summary-number">01 / ORGANIZE</span><h2>Organizes the file</h2><p>Build a durable folder structure instead of another mystery pile.</p></article>
+    <article class="summary-card"><span class="summary-number">02 / DIAGNOSE</span><h2>Flags the gaps</h2><p>Surface incomplete periods, conflicts, stale records, and missing support.</p></article>
+    <article class="summary-card"><span class="summary-number">03 / PROTECT</span><h2>Protects the handoff</h2><p>Separate originals, working copies, redactions, and privacy-sensitive records.</p></article>
+    <article class="summary-card"><span class="summary-number">04 / EXECUTE</span><h2>Assigns next actions</h2><p>Give each open item a priority, owner, and concrete move.</p></article>
+  </section>
+
+  <section class="section" id="failure-map"><div class="container">
+    <div class="section-kicker">The failure map</div><h2 class="section-heading">Funding files leak time in predictable places.</h2>
+    <p class="section-intro">Most breakdowns are operational—not cinematic. The file arrives incomplete, inconsistent, over-shared, or ownerless.</p>
+    <div class="failure-map">
+      <article class="failure-node" data-index="01"><h3>Scattered files</h3><p>Email, phone photos, downloads, and cloud folders with no source of truth.</p></article>
+      <article class="failure-node" data-index="02"><h3>Incomplete periods</h3><p>A statement range looks present until two pages or one month disappear.</p></article>
+      <article class="failure-node" data-index="03"><h3>Conflicting identity</h3><p>Legal name, DBA, ownership, or authorized signer details do not line up.</p></article>
+      <article class="failure-node" data-index="04"><h3>Stale debt records</h3><p>Balances, payment frequency, and payoff information are out of date.</p></article>
+      <article class="failure-node" data-index="05"><h3>Vague use of funds</h3><p>“Working capital” replaces a specific amount, purpose, timing, and support.</p></article>
+      <article class="failure-node" data-index="06"><h3>Unexplained cash activity</h3><p>Large deposits, withdrawals, transfers, or payout delays have no factual note.</p></article>
+      <article class="failure-node" data-index="07"><h3>Privacy exposure</h3><p>Sensitive files sit behind public links or mixed-client spreadsheets.</p></article>
+      <article class="failure-node" data-index="08"><h3>Ownerless follow-up</h3><p>Everybody knows something is missing. Nobody owns the next move.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section section-yellow" id="how-it-works"><div class="container">
+    <div class="section-kicker">Four moves</div><h2 class="section-heading">Describe. Inventory. Generate. Resolve.</h2>
+    <div class="process-grid">
+      <article class="process-step"><div class="step-number">01</div><h3>Describe the business and request</h3><p>Capture the business type, role, amount, purpose, timing, and relevant facts.</p></article>
+      <article class="process-step"><div class="step-number">02</div><h3>List what is available and missing</h3><p>Use document names, statement periods, categories, and factual status notes.</p></article>
+      <article class="process-step"><div class="step-number">03</div><h3>Generate the operating package</h3><p>Create the structure, tracker, snapshot, privacy review, and QA.</p></article>
+      <article class="process-step"><div class="step-number">04</div><h3>Resolve gaps before human review</h3><p>Work the Blockers first, then fix avoidable submission friction.</p></article>
+    </div>
+    <div class="note-box">The GPT works from metadata, summaries, and redacted information. It is not a document vault and should not receive credentials or unnecessary identity data.</div>
+  </div></section>
+
+  <section class="section" id="actions"><div class="container">
+    <div class="section-kicker">Action command center</div><h2 class="section-heading">Nine actions. One dispatcher. Zero underwriting theater.</h2>
+    <p class="section-intro">Choose one focused output or generate the complete package. Every action routes through <code>/api/actions/public</code>.</p>
+    <div class="action-grid">
+<article class="action-card action-featured">
+  <div class="action-id">build_data_room_package</div>
+  <h3>Build Data Room Package</h3>
+  <p>Assemble the complete folder, checklist, naming, tracker, snapshot, privacy, context, and QA package.</p>
+  <div class="action-meta"><span class="meta-tag">metadata-only</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="tools/package-builder.html">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">generate_folder_structure</div>
+  <h3>Generate Folder Structure</h3>
+  <p>Create a business-type-aware folder tree with descriptions and sensitive-folder warnings.</p>
+  <div class="action-meta"><span class="meta-tag">low</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="tools/folder-structure-builder.html">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">generate_document_checklist</div>
+  <h3>Generate Document Checklist</h3>
+  <p>Build a categorized checklist that marks received, requested, and not-yet-requested items.</p>
+  <div class="action-meta"><span class="meta-tag">metadata-only</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="pages/actions.html#generate-document-checklist">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">generate_file_naming_rules</div>
+  <h3>Generate File Naming Rules</h3>
+  <p>Turn vague download names into consistent working-copy names without overwriting originals.</p>
+  <div class="action-meta"><span class="meta-tag">file-name review</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="pages/actions.html#generate-file-naming-rules">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">create_missing_document_tracker</div>
+  <h3>Create Missing-Document Tracker</h3>
+  <p>Assign statuses, priorities, owners, and next actions to open document items.</p>
+  <div class="action-meta"><span class="meta-tag">metadata-only</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="tools/missing-document-tracker.html">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">generate_deal_snapshot</div>
+  <h3>Generate Deal Snapshot</h3>
+  <p>Create a factual one-page summary of the business, request, documents, gaps, and next step.</p>
+  <div class="action-meta"><span class="meta-tag">redacted facts</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="pages/actions.html#generate-deal-snapshot">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">generate_privacy_checklist</div>
+  <h3>Generate Privacy Checklist</h3>
+  <p>Identify credentials, unrestricted sharing, mixed-client files, identity exposure, and redaction needs.</p>
+  <div class="action-meta"><span class="meta-tag">privacy-sensitive</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="pages/privacy.html">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">rewrite_context_notes</div>
+  <h3>Rewrite Context Notes</h3>
+  <p>Convert rough cash-flow notes into factual, source-aware explanations with reviewer questions.</p>
+  <div class="action-meta"><span class="meta-tag">redacted facts</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="pages/actions.html#rewrite-context-notes">Open action →</a>
+</article>
+<article class="action-card">
+  <div class="action-id">run_readiness_qa_gate</div>
+  <h3>Run Readiness QA Gate</h3>
+  <p>Classify the file as ready, held by a blocker, or provisional pending confirmation.</p>
+  <div class="action-meta"><span class="meta-tag">metadata-only</span><span class="meta-tag">Human review</span></div>
+  <a class="button button-dark" href="tools/readiness-qa.html">Open action →</a>
+</article></div>
+  </div></section>
+
+  <section class="section section-dark" id="priorities"><div class="container">
+    <div class="section-kicker">Readiness priority system</div><h2 class="section-heading">Not every gap deserves the same siren.</h2>
+    <div class="priority-grid">
+      <article class="priority-card blocker"><span class="status-chip">Highest priority</span><h3>Blocker</h3><p>A material issue affecting identity, ownership, privacy, statement completeness, authenticity, or a core request fact.</p></article>
+      <article class="priority-card fix"><span class="status-chip">Resolve next</span><h3>Fix Before Submission</h3><p>An issue likely to create delays, repeated questions, or weaker presentation.</p></article>
+      <article class="priority-card improve"><span class="status-chip">Nice improvement</span><h3>Improve If Time Allows</h3><p>An improvement that strengthens organization or handoff quality without holding the file.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section section-blue" id="business-types"><div class="container">
+    <div class="section-kicker">Business-aware modules</div><h2 class="section-heading">Same operating system. Different business reality.</h2>
+    <div class="business-selector">
+      <div class="business-tabs" role="tablist">
+        <button class="business-tab" type="button" data-business-tab="contractor" aria-selected="true">Contractor</button>
+        <button class="business-tab" type="button" data-business-tab="ecommerce">Ecommerce</button>
+        <button class="business-tab" type="button" data-business-tab="restaurant">Restaurant</button>
+        <button class="business-tab" type="button" data-business-tab="agency">Agency</button>
+        <button class="business-tab" type="button" data-business-tab="clinic">Clinic</button>
+        <button class="business-tab" type="button" data-business-tab="local">Local service</button>
+        <button class="business-tab" type="button" data-business-tab="broker">Funding broker</button>
+        <button class="business-tab" type="button" data-business-tab="generic">Generic</button>
+      </div>
+      <div class="business-panel" data-business-panel></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="demo"><div class="container">
+    <div class="section-kicker">Safe fictional demo</div><h2 class="section-heading">Watch one missing statement become an owned next action.</h2>
+    <div class="demo-shell">
+      <div class="demo-input"><div class="panel-title"><span>Input metadata</span><span>Fictional</span></div><pre class="code-block">{
+  "business_name": "Ridgeway Electric LLC",
+  "business_type": "contractor",
+  "user_role": "business_owner",
+  "funding_purpose": "equipment",
+  "requested_amount": 80000,
+  "minimum_useful_amount": 55000,
+  "documents_available": [
+    "YTD P&L",
+    "Equipment quote"
+  ],
+  "documents_missing": [
+    "May bank statement"
+  ]
+}</pre><button class="button button-primary" type="button" data-run-demo style="margin-top:16px">Run the safe demo →</button></div>
+      <div class="demo-output"><div class="panel-title"><span>Structured result</span><span>Human review required</span></div><div class="demo-results" data-demo-results><div class="result-line"><strong>Status</strong><span>Click “Run the safe demo” to assemble the result.</span></div></div></div>
+    </div>
+  </div></section>
+
+  <section class="section section-coral" id="privacy"><div class="container">
+    <div class="section-kicker">Privacy by operating rule</div><h2 class="section-heading">Clean files without careless data handling.</h2>
+    <div class="trust-grid">
+      <article class="trust-card dont"><h3>Do not paste</h3><ul class="cross-list"><li>Passwords or bank login credentials</li><li>API keys or access tokens</li><li>Full Social Security numbers</li><li>Full bank account numbers</li><li>Security-question answers</li><li>Unnecessary unredacted IDs</li><li>Raw binary or base64 documents</li></ul></article>
+      <article class="trust-card use"><h3>Use instead</h3><ul class="check-list"><li>Redacted metadata</li><li>Document names and categories</li><li>Statement periods</li><li>Factual summaries</li><li>Missing-item notes</li><li>Secure storage references</li><li>Human-confirmed source facts</li></ul></article>
+    </div>
+    <p style="margin-top:28px"><a class="button button-dark" href="pages/privacy.html">Review the full privacy rules →</a></p>
+  </div></section>
+
+  <section class="section" id="scope"><div class="container">
+    <div class="section-kicker">Scope without smoke</div><h2 class="section-heading">Built for operations. Not pretend underwriting.</h2>
+    <div class="split-card">
+      <div><h3>Best for</h3><ul class="check-list"><li>Organizing a funding package</li><li>Preparing a broker or processor handoff</li><li>Identifying missing items</li><li>Creating a factual summary</li><li>Assigning next steps</li><li>Improving privacy discipline</li></ul></div>
+      <div><h3>Not for</h3><ul class="cross-list"><li>Underwriting</li><li>Approval predictions</li><li>Legal conclusions</li><li>Tax or accounting advice</li><li>Credit repair</li><li>Document alteration</li><li>Automatic submission</li></ul></div>
+    </div>
+  </div></section>
+
+  <section class="section section-dark" id="human-review"><div class="container">
+    <div class="section-kicker">Human in the loop</div><h2 class="section-heading">The final move belongs to an authorized human.</h2>
+    <div class="classification-track">
+      <article class="classification"><span class="status-chip">Proceed to review</span><h3>Ready for Human Review</h3><p>No identified organizational Blocker remains in the supplied metadata.</p></article>
+      <article class="classification"><span class="status-chip">Stop and resolve</span><h3>Hold — Blocker Present</h3><p>A material issue needs confirmation or correction before readiness can be reassessed.</p></article>
+      <article class="classification"><span class="status-chip">Confirm facts</span><h3>Provisional — Confirmation Needed</h3><p>The structure is useful, but assumptions or material facts remain open.</p></article>
+    </div>
+  </div></section>
+
+  <section class="section" id="resources"><div class="container">
+    <div class="section-kicker">Templates + downloads</div><h2 class="section-heading">The boring operating assets that save real time.</h2>
+    <div class="resource-grid">
+      <article class="resource-card"><span class="action-id">TRACKER</span><h3>Missing-document tracker</h3><p>Status, priority, owner, due date, why it matters, and next action.</p><a class="button button-dark" href="tools/missing-document-tracker.html">Build one →</a></article>
+      <article class="resource-card"><span class="action-id">SNAPSHOT</span><h3>Deal snapshot</h3><p>A factual one-page structure for human review and clean handoff.</p><a class="button button-dark" href="pages/templates.html">View template →</a></article>
+      <article class="resource-card"><span class="action-id">DEVELOPER</span><h3>OpenAPI + schemas</h3><p>Contracts for the single no-auth public action dispatcher.</p><a class="button button-dark" href="pages/downloads.html">Open downloads →</a></article>
+    </div>
+  </div></section>
+
+  <section class="section section-yellow" id="faq"><div class="container">
+    <div class="section-kicker">Frequently asked</div><h2 class="section-heading">Questions a sane operator asks before using AI near financial files.</h2>
+    <div class="faq-list"><details><summary>What is a funding data room?</summary><div class='faq-answer'>A funding data room is an organized set of business, ownership, banking, financial, tax, debt, request, and supporting records prepared for controlled human review.</div></details><details><summary>What documents belong in a business funding data room?</summary><div class='faq-answer'>Requirements vary, but common categories include business identity, ownership records, complete bank statements, current financials, tax records when requested, debt schedules, use-of-funds support, and factual context notes.</div></details><details><summary>Can AI organize business loan documents?</summary><div class='faq-answer'>AI can help structure metadata, checklists, trackers, file names, summaries, and readiness gaps. It should not replace human verification or receive unnecessary credentials and identity data.</div></details><details><summary>Does Funding Data Room Copilot approve business funding?</summary><div class='faq-answer'>No. It does not determine eligibility, predict approval, price financing, or replace underwriting.</div></details><details><summary>Is it safe to paste bank statements into a Custom GPT?</summary><div class='faq-answer'>Use document metadata, redacted facts, and secure references instead of pasting raw statements or unnecessary private information.</div></details><details><summary>What is a missing-document tracker?</summary><div class='faq-answer'>It records each item’s status, priority, owner, due date, why it matters, and next action.</div></details><details><summary>How does the readiness QA gate work?</summary><div class='faq-answer'>It organizes issues into Blocker, Fix Before Submission, and Improve If Time Allows, then returns one approved human-review classification.</div></details><details><summary>Can funding brokers use this with clients?</summary><div class='faq-answer'>Yes. Brokers and processors can standardize intake, separate original files from internal QA, assign next actions, and prepare cleaner human handoffs.</div></details><details><summary>What does Ready for Human Review mean?</summary><div class='faq-answer'>No identified operational Blocker remains in the supplied metadata. It does not mean approved, eligible, or underwritten.</div></details><details><summary>Can the GPT create folders in Google Drive or Dropbox?</summary><div class='faq-answer'>The current no-auth version generates the structure and plan. Connected workspace creation requires a later user-authorized integration.</div></details></div>
+  </div></section>
+
+  <section class="final-cta"><div class="container"><div class="final-cta-box">
+    <div><div class="section-kicker">Your downloads folder has done enough</div><h2>Stop sending funding files that look like a downloads folder had a breakdown.</h2><small>Cleaner organization may help reduce avoidable delays and questions. It does not guarantee approval.</small></div>
+    <div class="final-cta-actions"><a class="button button-primary" data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch Funding Data Room Copilot ↗</a><a class="button button-secondary" href="tools/no-auth-test.html">Test the public actions →</a></div>
+  </div></div></section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">FDR</span>
+        <span class="brand-copy"><strong>Funding Data Room</strong><span>Copilot</span></span>
+      </a>
+      <p class="footer-positioning">Organization first. Readiness guidance second. Underwriting never.</p>
+    </div>
+    <div><strong>Explore</strong><a href="pages/actions.html">Action catalog</a><a href="pages/templates.html">Templates</a><a href="pages/downloads.html">Downloads</a><a href="pages/knowledge.html">Knowledge</a></div>
+    <div><strong>Operate safely</strong><a href="pages/privacy.html">Privacy rules</a><a href="pages/testing.html">Testing guide</a><a href="pages/about.html">About</a><a href="https://github.com/JFeimster/Funding-Data-Room-Copilot">GitHub repository ↗</a></div>
+    <div class="footer-cta"><strong>Ready to clean up the file?</strong><a class="button button-primary" data-gpt-link href="https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT">Launch the Copilot ↗</a><small>Human review is still required. No approval promises.</small></div>
+  </div>
+  <div class="footer-bottom"><span>© <span data-current-year>2026</span> Funding Data Room Copilot</span><span>Metadata-first · Human-reviewed · No underwriting claims</span></div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>

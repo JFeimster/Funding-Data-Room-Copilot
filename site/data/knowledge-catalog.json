@@ -1,0 +1,56 @@
+{
+  "version": "1.0.0",
+  "source_manifest": "../../knowledge/knowledge-manifest.json",
+  "status": "ready-for-manifest-sync",
+  "items": [
+    {
+      "id": "overview",
+      "title": "Funding Data Room Builder Overview",
+      "category": "core",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "checklist",
+      "title": "Funding Data Room Checklist",
+      "category": "core",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "document-reference",
+      "title": "Business Loan Document Reference",
+      "category": "core",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "safe-language",
+      "title": "Compliance-Safe Language Guide",
+      "category": "core",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "folder-template",
+      "title": "Funding Data Room Folder Template",
+      "category": "workflow",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "qa-gate",
+      "title": "Funding Readiness QA Gate",
+      "category": "workflow",
+      "availability": "planned",
+      "path": null
+    },
+    {
+      "id": "privacy-rules",
+      "title": "Privacy and Redaction Rules",
+      "category": "safety",
+      "availability": "planned",
+      "path": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F6F1E8"/>
+  <path d="M0 0h1200v54H0z" fill="#FFD84D"/>
+  <path d="M0 576h1200v54H0z" fill="#45F0BD"/>
+  <g stroke="#0B0B0D" stroke-width="8">
+    <rect x="70" y="98" width="650" height="420" fill="#F6F1E8"/>
+    <rect x="760" y="98" width="370" height="420" fill="#0B0B0D"/>
+  </g>
+  <text x="110" y="185" font-family="Arial Black,Arial,sans-serif" font-size="32" fill="#0B0B0D">FUNDING READINESS OPERATIONS</text>
+  <text x="110" y="260" font-family="Arial Black,Arial,sans-serif" font-size="66" fill="#0B0B0D">TURN FUNDING</text>
+  <text x="110" y="330" font-family="Arial Black,Arial,sans-serif" font-size="66" fill="#0B0B0D">CHAOS INTO A</text>
+  <text x="110" y="400" font-family="Arial Black,Arial,sans-serif" font-size="66" fill="#0B0B0D">DATA ROOM.</text>
+  <rect x="110" y="438" width="495" height="42" fill="#6C8CFF" stroke="#0B0B0D" stroke-width="5"/>
+  <text x="126" y="468" font-family="Consolas,monospace" font-size="22" fill="#0B0B0D">ORGANIZE · FLAG · HAND OFF</text>
+  <g font-family="Consolas,monospace" font-size="20" fill="#F6F1E8">
+    <text x="800" y="160">00_READ_ME</text>
+    <text x="800" y="205">01_IDENTITY</text>
+    <text x="800" y="250">03_BANK_STATEMENTS</text>
+    <text x="800" y="295">07_DEBT</text>
+    <text x="800" y="340">09_TRACKER</text>
+    <text x="800" y="385">10_DEAL_SNAPSHOT</text>
+    <text x="800" y="430">12_HUMAN_REVIEW</text>
+  </g>
+</svg>

@@ -1,0 +1,204 @@
+{
+  "json": {
+    "assets/asset-manifest.json": "passed",
+    "site/data/actions-catalog.json": "passed",
+    "site/data/site-map.json": "passed",
+    "site/data/knowledge-catalog.json": "passed",
+    "site/data/downloads-catalog.json": "passed"
+  },
+  "html": {
+    "site/index.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/about.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/actions.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/downloads.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/getting-started.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/knowledge.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/privacy.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/templates.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/pages/testing.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/tools/folder-structure-builder.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/tools/missing-document-tracker.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/tools/no-auth-test.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/tools/package-builder.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    },
+    "site/tools/readiness-qa.html": {
+      "doctype": true,
+      "title": true,
+      "description": true,
+      "skip_link": true,
+      "main": true,
+      "script": true
+    }
+  },
+  "javascript": {
+    "site/script.js": "passed"
+  },
+  "links": {
+    "site/index.html": {
+      "broken": []
+    },
+    "site/pages/about.html": {
+      "broken": []
+    },
+    "site/pages/actions.html": {
+      "broken": []
+    },
+    "site/pages/downloads.html": {
+      "broken": []
+    },
+    "site/pages/getting-started.html": {
+      "broken": []
+    },
+    "site/pages/knowledge.html": {
+      "broken": []
+    },
+    "site/pages/privacy.html": {
+      "broken": []
+    },
+    "site/pages/templates.html": {
+      "broken": []
+    },
+    "site/pages/testing.html": {
+      "broken": []
+    },
+    "site/tools/folder-structure-builder.html": {
+      "broken": []
+    },
+    "site/tools/missing-document-tracker.html": {
+      "broken": []
+    },
+    "site/tools/no-auth-test.html": {
+      "broken": []
+    },
+    "site/tools/package-builder.html": {
+      "broken": []
+    },
+    "site/tools/readiness-qa.html": {
+      "broken": []
+    }
+  },
+  "placeholders": [
+    "https://chatgpt.com/g/REPLACE-WITH-FUNDING-DATA-ROOM-COPILOT",
+    "https://YOUR-VERCEL-DOMAIN.vercel.app"
+  ],
+  "files": [
+    "README-site.md",
+    "site/styles.css",
+    "site/script.js",
+    "site/index.html",
+    "assets/asset-manifest.json",
+    "assets/images/social/funding-data-room-og.svg",
+    "assets/icons/favicon/favicon.svg",
+    "assets/icons/app/app-mark.svg",
+    "site/pages/getting-started.html",
+    "site/pages/actions.html",
+    "site/pages/knowledge.html",
+    "site/pages/templates.html",
+    "site/pages/privacy.html",
+    "site/pages/testing.html",
+    "site/pages/downloads.html",
+    "site/pages/about.html",
+    "site/tools/no-auth-test.html",
+    "site/tools/package-builder.html",
+    "site/tools/folder-structure-builder.html",
+    "site/tools/missing-document-tracker.html",
+    "site/tools/readiness-qa.html",
+    "site/data/actions-catalog.json",
+    "site/data/site-map.json",
+    "site/data/knowledge-catalog.json",
+    "site/data/downloads-catalog.json",
+    "site/components/header.html",
+    "site/components/footer.html",
+    "site/components/privacy-warning.html"
+  ]
+}

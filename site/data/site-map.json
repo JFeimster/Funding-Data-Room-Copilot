@@ -1,0 +1,117 @@
+{
+  "version": "1.0.0",
+  "pages": [
+    {
+      "title": "Home",
+      "path": "/site/index.html",
+      "description": "Funding Data Room Copilot launch page.",
+      "type": "marketing",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Getting Started",
+      "path": "/site/pages/getting-started.html",
+      "description": "Safe intake and first workflow.",
+      "type": "guide",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Actions",
+      "path": "/site/pages/actions.html",
+      "description": "Catalog of nine no-auth actions.",
+      "type": "reference",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Knowledge",
+      "path": "/site/pages/knowledge.html",
+      "description": "Knowledge pack structure and status.",
+      "type": "reference",
+      "navigation_group": "resources",
+      "public_status": "public"
+    },
+    {
+      "title": "Templates",
+      "path": "/site/pages/templates.html",
+      "description": "Operational templates and formats.",
+      "type": "resource",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Privacy",
+      "path": "/site/pages/privacy.html",
+      "description": "Metadata-first privacy rules.",
+      "type": "policy",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Testing",
+      "path": "/site/pages/testing.html",
+      "description": "Safe action testing guide.",
+      "type": "guide",
+      "navigation_group": "primary",
+      "public_status": "public"
+    },
+    {
+      "title": "Downloads",
+      "path": "/site/pages/downloads.html",
+      "description": "Approved downloads and planned releases.",
+      "type": "resource",
+      "navigation_group": "resources",
+      "public_status": "public"
+    },
+    {
+      "title": "About",
+      "path": "/site/pages/about.html",
+      "description": "Product scope, audience, and boundaries.",
+      "type": "company",
+      "navigation_group": "resources",
+      "public_status": "public"
+    },
+    {
+      "title": "No-Auth Test Console",
+      "path": "/site/tools/no-auth-test.html",
+      "description": "Generic action test console.",
+      "type": "tool",
+      "navigation_group": "tools",
+      "public_status": "public"
+    },
+    {
+      "title": "Package Builder",
+      "path": "/site/tools/package-builder.html",
+      "description": "Complete package builder.",
+      "type": "tool",
+      "navigation_group": "tools",
+      "public_status": "public"
+    },
+    {
+      "title": "Folder Structure Builder",
+      "path": "/site/tools/folder-structure-builder.html",
+      "description": "Business-aware folder generator.",
+      "type": "tool",
+      "navigation_group": "tools",
+      "public_status": "public"
+    },
+    {
+      "title": "Missing-Document Tracker",
+      "path": "/site/tools/missing-document-tracker.html",
+      "description": "Operational tracker generator.",
+      "type": "tool",
+      "navigation_group": "tools",
+      "public_status": "public"
+    },
+    {
+      "title": "Readiness QA",
+      "path": "/site/tools/readiness-qa.html",
+      "description": "Readiness classification tool.",
+      "type": "tool",
+      "navigation_group": "tools",
+      "public_status": "public"
+    }
+  ]
+}
