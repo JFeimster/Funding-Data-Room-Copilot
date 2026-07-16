@@ -1,0 +1,401 @@
+{
+  "files": {
+    "count": 34,
+    "paths": [
+      ".env.example",
+      ".gitignore",
+      "README.md",
+      "actions/no-auth/config/public-actions.registry.json",
+      "actions/no-auth/constants/public-action-names.js",
+      "actions/no-auth/docs/no-auth-actions.md",
+      "actions/no-auth/docs/no-auth-examples.md",
+      "actions/no-auth/docs/no-auth-testing.md",
+      "actions/no-auth/examples/public-action-requests.json",
+      "actions/no-auth/examples/public-action-responses.json",
+      "actions/no-auth/modules/build-data-room-package.js",
+      "actions/no-auth/modules/create-missing-document-tracker.js",
+      "actions/no-auth/modules/generate-deal-snapshot.js",
+      "actions/no-auth/modules/generate-document-checklist.js",
+      "actions/no-auth/modules/generate-file-naming-rules.js",
+      "actions/no-auth/modules/generate-folder-structure.js",
+      "actions/no-auth/modules/generate-privacy-checklist.js",
+      "actions/no-auth/modules/rewrite-context-notes.js",
+      "actions/no-auth/modules/run-readiness-qa-gate.js",
+      "actions/no-auth/openapi/no-auth-actions.openapi.yaml",
+      "actions/no-auth/schemas/data-room-package.schema.json",
+      "actions/no-auth/schemas/deal-snapshot.schema.json",
+      "actions/no-auth/schemas/missing-document-tracker.schema.json",
+      "actions/no-auth/schemas/public-action-request.schema.json",
+      "actions/no-auth/schemas/public-action-response.schema.json",
+      "actions/no-auth/validation/validate-public-payload.js",
+      "actions/shared/constants/readiness-priorities.js",
+      "actions/shared/responses/error-response.js",
+      "actions/shared/responses/success-response.js",
+      "actions/shared/validation/validate-action-request.js",
+      "api/actions/public.js",
+      "package.json",
+      "site/tools/no-auth-test.html",
+      "vercel.json"
+    ]
+  },
+  "javascript": {
+    "actions/no-auth/constants/public-action-names.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/build-data-room-package.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/create-missing-document-tracker.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/generate-deal-snapshot.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/generate-document-checklist.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/generate-file-naming-rules.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/generate-folder-structure.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/generate-privacy-checklist.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/rewrite-context-notes.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/modules/run-readiness-qa-gate.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/no-auth/validation/validate-public-payload.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/shared/constants/readiness-priorities.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/shared/responses/error-response.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/shared/responses/success-response.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "actions/shared/validation/validate-action-request.js": {
+      "passed": true,
+      "stderr": ""
+    },
+    "api/actions/public.js": {
+      "passed": true,
+      "stderr": ""
+    }
+  },
+  "json": {
+    "actions/no-auth/config/public-actions.registry.json": "passed",
+    "actions/no-auth/examples/public-action-requests.json": "passed",
+    "actions/no-auth/examples/public-action-responses.json": "passed",
+    "actions/no-auth/schemas/data-room-package.schema.json": "passed",
+    "actions/no-auth/schemas/deal-snapshot.schema.json": "passed",
+    "actions/no-auth/schemas/missing-document-tracker.schema.json": "passed",
+    "actions/no-auth/schemas/public-action-request.schema.json": "passed",
+    "actions/no-auth/schemas/public-action-response.schema.json": "passed",
+    "package.json": "passed",
+    "vercel.json": "passed"
+  },
+  "yaml_openapi": {
+    "parser": "PyYAML",
+    "checks": {
+      "openapi_3_1": true,
+      "correct_path": true,
+      "correct_operation_id": true,
+      "server_placeholder": true,
+      "no_security_scheme": true,
+      "no_callbacks": true,
+      "responses_present": true,
+      "all_nine_actions": true,
+      "yaml_parsed": true,
+      "parsed_title": "Funding Data Room Copilot \u2014 No-Auth Actions"
+    }
+  },
+  "imports": {
+    "actions/no-auth/constants/public-action-names.js": [],
+    "actions/no-auth/modules/build-data-room-package.js": [
+      {
+        "import": "./generate-folder-structure.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-folder-structure.js"
+      },
+      {
+        "import": "./generate-document-checklist.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-document-checklist.js"
+      },
+      {
+        "import": "./generate-file-naming-rules.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-file-naming-rules.js"
+      },
+      {
+        "import": "./create-missing-document-tracker.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/create-missing-document-tracker.js"
+      },
+      {
+        "import": "./generate-deal-snapshot.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-deal-snapshot.js"
+      },
+      {
+        "import": "./generate-privacy-checklist.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-privacy-checklist.js"
+      },
+      {
+        "import": "./rewrite-context-notes.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/rewrite-context-notes.js"
+      },
+      {
+        "import": "./run-readiness-qa-gate.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/run-readiness-qa-gate.js"
+      }
+    ],
+    "actions/no-auth/modules/create-missing-document-tracker.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/modules/generate-deal-snapshot.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/modules/generate-document-checklist.js": [],
+    "actions/no-auth/modules/generate-file-naming-rules.js": [],
+    "actions/no-auth/modules/generate-folder-structure.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/modules/generate-privacy-checklist.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/modules/rewrite-context-notes.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/modules/run-readiness-qa-gate.js": [
+      {
+        "import": "../../shared/constants/readiness-priorities.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/constants/readiness-priorities.js"
+      }
+    ],
+    "actions/no-auth/validation/validate-public-payload.js": [
+      {
+        "import": "../constants/public-action-names.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/constants/public-action-names.js"
+      }
+    ],
+    "actions/shared/constants/readiness-priorities.js": [],
+    "actions/shared/responses/error-response.js": [],
+    "actions/shared/responses/success-response.js": [],
+    "actions/shared/validation/validate-action-request.js": [
+      {
+        "import": "../../no-auth/constants/public-action-names.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/constants/public-action-names.js"
+      }
+    ],
+    "api/actions/public.js": [
+      {
+        "import": "../../actions/no-auth/constants/public-action-names.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/constants/public-action-names.js"
+      },
+      {
+        "import": "../../actions/shared/responses/success-response.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/responses/success-response.js"
+      },
+      {
+        "import": "../../actions/shared/responses/error-response.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/responses/error-response.js"
+      },
+      {
+        "import": "../../actions/shared/validation/validate-action-request.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/shared/validation/validate-action-request.js"
+      },
+      {
+        "import": "../../actions/no-auth/validation/validate-public-payload.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/validation/validate-public-payload.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/build-data-room-package.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/build-data-room-package.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/generate-folder-structure.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-folder-structure.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/generate-document-checklist.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-document-checklist.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/generate-file-naming-rules.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-file-naming-rules.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/create-missing-document-tracker.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/create-missing-document-tracker.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/generate-deal-snapshot.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-deal-snapshot.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/generate-privacy-checklist.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/generate-privacy-checklist.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/rewrite-context-notes.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/rewrite-context-notes.js"
+      },
+      {
+        "import": "../../actions/no-auth/modules/run-readiness-qa-gate.js",
+        "exists": true,
+        "resolved": "/mnt/data/funding-data-room-copilot-no-auth-actions-complete/actions/no-auth/modules/run-readiness-qa-gate.js"
+      }
+    ]
+  },
+  "security": {
+    "actions/no-auth/constants/public-action-names.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/build-data-room-package.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/create-missing-document-tracker.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/generate-deal-snapshot.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/generate-document-checklist.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/generate-file-naming-rules.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/generate-folder-structure.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/generate-privacy-checklist.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/rewrite-context-notes.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/modules/run-readiness-qa-gate.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/no-auth/validation/validate-public-payload.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/shared/constants/readiness-priorities.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/shared/responses/error-response.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/shared/responses/success-response.js": {
+      "passed": true,
+      "hits": []
+    },
+    "actions/shared/validation/validate-action-request.js": {
+      "passed": true,
+      "hits": []
+    },
+    "api/actions/public.js": {
+      "passed": true,
+      "hits": []
+    }
+  },
+  "architecture": {
+    "serverless_function_count": 1,
+    "serverless_function_files": [
+      "api/actions/public.js"
+    ],
+    "exactly_one_no_auth_function": true,
+    "dispatcher_uses_map": true,
+    "dispatcher_transport_only": true,
+    "composite_imports_individual_modules": true,
+    "static_console_outside_api": true
+  },
+  "runtime": {
+    "passed": true,
+    "stdout": "{\"actions\":[{\"action\":\"build_data_room_package\",\"status\":200},{\"action\":\"generate_folder_structure\",\"status\":200},{\"action\":\"generate_document_checklist\",\"status\":200},{\"action\":\"generate_file_naming_rules\",\"status\":200},{\"action\":\"create_missing_document_tracker\",\"status\":200},{\"action\":\"generate_deal_snapshot\",\"status\":200},{\"action\":\"generate_privacy_checklist\",\"status\":200},{\"action\":\"rewrite_context_notes\",\"status\":200},{\"action\":\"run_readiness_qa_gate\",\"status\":200}],\"errors\":{\"unknown\":400,\"privacy\":400,\"method\":405,\"large\":413}}"
+  },
+  "unresolved_issues": [],
+  "action_consistency": {
+    "constants": true,
+    "registry": true,
+    "request_schema": true,
+    "openapi": true,
+    "dispatcher_imports": true
+  }
+}
